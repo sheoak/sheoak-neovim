@@ -33,7 +33,7 @@ Installation:
 
 Clone this repository into .config/nvim:
 
-  git clone git@github.com:sheoak/dotfiles-neovim-bepoptimist.git .config/nvim
+  git clone https://github.com/sheoak/dotfiles-neovim-bepoptimist.git .config/nvim
 
 copy this file to `~/.vimrc` for vim or `~/.local/nvim/init.vim` for neovim
 manually install vim-plug as instructed.
