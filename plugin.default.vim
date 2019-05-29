@@ -137,6 +137,7 @@ let g:sneak#label = 0
 
 " Startify
 let g:bookmark_auto_save_file = $DOTFILES_PRIVATE . '/nvim/vim-bookmarks'
+let g:startify_custom_header = []
 
 " " vim-multiple-cursors
 " let g:multi_cursor_start_word_key      = '<C-h>'
