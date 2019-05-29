@@ -71,15 +71,14 @@ nnoremap <silent> màI :call mkdx#fzfQuickfixHeaders()<CR>
 " Rewrite some vim maps in insert mode, not that usefull anyway if you know 
 " how to use vim in normal mode properly:
 inoremap <C-j> <C-x><C-]>
-inoremap <C-f> <C-x><C-f>
 inoremap <C-o> <C-x><C-o>
 
 imap <c-k> <plug>(fzf-complete-word)
 imap <c-l> <plug>(fzf-complete-line)
-inoremap <expr> <c-x><c-j> fzf#vim#complete#path('ag --hidden -l -g ""')
+inoremap <expr> <c-f> fzf#vim#complete#path('ag --hidden -l -g ""')
 
 " Global line completion (not just open buffers. ripgrep required.)
-" TODO: create a command
+" TODO: add with ,l and ,L in normal mode
 inoremap <expr> <c-x><c-l> fzf#vim#complete(fzf#wrap({
             \ 'prefix': '^.*$',
             \ 'source': 'rg -n ^ --color always',
