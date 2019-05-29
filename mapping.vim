@@ -36,6 +36,8 @@ let g:jedi#usages_command = ''
 let g:jedi#goto_assignments_command = ''
 let g:jedi#goto_command = ''
 let g:user_emmet_leader_key='<C-y>'
+" hack for sneak, to avoid remapping
+nmap , <Nop>
 
 " -----------------------------------------------------------------------------
 " Plugins
