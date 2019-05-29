@@ -156,3 +156,8 @@ if (executable('ag'))
     let g:unimpaired_extra_denite_cmd_hidden = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
     let g:unimpaired_extra_denite_cmd = ['ag', '--follow', '--nocolor', '--nogroup', '-g', '']
 endif
+
+" FZF
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noruler
+autocmd  BufLeave *   set laststatus=2 ruler

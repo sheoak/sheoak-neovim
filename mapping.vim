@@ -122,7 +122,6 @@ nnoremap <leader>do :DiffOrig<CR>
 nnoremap <leader><space> :silent! %s/\s\+$//<CR>
 
 " Forgotten unbreakable spaces… for French only
-" TODO: move me with execute <leader>
 " TODO: operator cleaner?
 nnoremap <leader>  :%s/\(\S\) \([:;?!]\)/\1 \2/g<CR>
 

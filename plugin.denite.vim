@@ -9,7 +9,7 @@ call denite#custom#source('file,file/rec,file/mru,file/old,file/point,file/rec/g
 
 call denite#custom#option('default', { 'prompt': '❯' })
 call denite#custom#option('default', { 'reversed': 'true' })
-call denite#custom#option('default', { 'winheight': '15' })
+call denite#custom#option('default', { 'winheight': '11' })
 
 call denite#custom#source('file', 'matchers', [
         \ 'matcher/hide_hidden_files',
