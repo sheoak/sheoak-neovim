@@ -2,10 +2,6 @@
 " Loading plugin via vim-plug
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Creating
-Plug 'sheoak/vim-unimpaired-extras'
-Plug 'sheoak/vim-sheoak-base-settings'
-
 " ----------------------------------------------------------------------------
 " Disabled plugins
 " ----------------------------------------------------------------------------
@@ -21,7 +17,9 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 " ----------------------------------------------------------------------------
 " My custom plugins
 " ----------------------------------------------------------------------------
-Plug 'sheoak/vim-bepoptimist'   " Bepo keymap
+Plug 'sheoak/vim-sheoak-base-settings' " Base vim settings
+Plug 'sheoak/vim-bepoptimist'          " Bepo keymap
+Plug 'sheoak/vim-unimpaired-extras'    " Additionnal vim-unimpaired mappings
 
 " ----------------------------------------------------------------------------
 " Themes and styling
@@ -135,3 +133,4 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 " After - plugins that must be loaded last
 Plug 'ryanoasis/vim-devicons'          " icons, must be loaded after the rest
+
