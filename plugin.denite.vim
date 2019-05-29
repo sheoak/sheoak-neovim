@@ -3,8 +3,8 @@ if (!exists("g:plugs['denite.nvim']"))
     finish
 endif
 
-" temporory fix for devicons (deprecated sources):
-call denite#custom#source('file,file/rec,file/mru,file/old,file/point',
+" temporary fix for devicons (deprecated sources):
+call denite#custom#source('file,file/rec,file/mru,file/old,file/point,file/rec/git',
     \ 'converters', ['devicons_denite_converter'])
 
 call denite#custom#option('default', { 'prompt': '❯' })
