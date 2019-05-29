@@ -7,20 +7,10 @@
 " see plugin vim-sheoak-base-settings for base settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Shame on me:
-" Dirty hacks or unclean settings that need to be change
-" -----------------------------------------------------------------------------
-" issue with nvidia graphic card and optimus, need more testing:
-" let loaded_matchparen = 1
-
 " default leader is bad in azerty and bépo keyboards
-" vim-bepoptimist plugin will take care of moving , and ; to < >
-" it's better to set the leader here than in plugins to avoid issues
-let mapleader = ","
-
-" -----------------------------------------------------------------------------
-" History / undo
-" -----------------------------------------------------------------------------
+" vim-bepoptimist plugin will take care of moving , and ;
+" we mainly use it as "execute prefix, see mapping.vim.
+let mapleader = ";"
 
 " you need to create backups and undo directory
 " XDG_DATA_HOME may not be defined so we use home
@@ -35,9 +25,6 @@ if has('persistent_undo')
     set undodir=$HOME/.local/share/nvim/undo//,$HOME/.backups/undo//,/tmp/undo//
 endif
 
-" -----------------------------------------------------------------------------
-" UI
-" -----------------------------------------------------------------------------
 if has("gui_running")
     set background=light
     set guifont="Fira Code 12"
