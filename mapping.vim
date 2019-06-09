@@ -21,21 +21,23 @@ tnoremap <C-g> <C-\><C-n>
 
 " ----------------------------------------------------------------------------
 " Plugin pre-configuration for bepotimist
+" It needs to be in the main configuration because of loading priorities
 " ----------------------------------------------------------------------------
 let g:surround_no_mappings = 1
 let g:ranger_map_keys = 0
-let g:table_mode_map_prefix = ',\|'
-let g:sneak#target_labels = "auiectsrnovdl"
 let g:bexec_no_mappings = 1
 let g:bclose_no_plugin_maps = 1
 let g:nvimgdb_disable_start_keymaps = 1
+
+let g:user_emmet_leader_key='<C-y>'
 let g:jedi#documentation_command = 'gh'   " vim Jedi needs to use the same key
 let g:jedi#completions_command = ""
 let g:jedi#rename_command = ''
 let g:jedi#usages_command = ''
 let g:jedi#goto_assignments_command = ''
 let g:jedi#goto_command = ''
-let g:user_emmet_leader_key='<C-y>'
+let g:table_mode_map_prefix = ',\|'
+let g:sneak#target_labels = "auiectsrnovdl"
 " hack for sneak, to avoid remapping
 nmap , <Nop>
 
@@ -98,22 +100,18 @@ nmap <leader>ad <Plug>(ale_detail)
 vmap <leader>x :call bexec#Visual()<CR>
 nmap <leader>x :call bexec#Normal()<CR>
 nmap <leader>l :call bexec#Live()<CR>
-nmap <leader>sv :source ~/.config/nvim/init.vim<CR>
-nmap <leader>ss :source %<CR>
 nmap <leader>pi :PlugInstall<CR>
 nmap <leader>pu :PlugUpdate<CR>
 nmap <leader>pU :PlugUpgrade<CR>
 nmap <leader>pc :PlugClean<CR>
 nmap <leader>ps :PlugStatus<CR>
 nmap <leader>pd :PlugDiff<CR>
-" reinstall plugins quickly
 nmap <leader>pI :w<CR>:source ~/.config/nvim/init.vim<CR>:PlugInstall<CR>
 nmap <leader>m :make<CR>
 nmap <leader>tt :!tox<CR>
 nmap <leader>tp :!pytest<CR>
-" [O]rder all css properties
+" Order all css properties
 nnoremap <leader>c :<C-u>g/{/ .+1,/}/-1 sort<CR>
-nnoremap <leader>u :<C-u>:GundoToggle<CR>
 
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
             \ | wincmd p | diffthis

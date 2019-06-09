@@ -25,19 +25,15 @@ if has('persistent_undo')
     set undodir=$HOME/.local/share/nvim/undo//,$HOME/.backups/undo//,/tmp/undo//
 endif
 
-if has("gui_running")
-    set background=light
-    set guifont="Fira Code 12"
-else
-    set background=dark
-endif
+" ----------------------------------------------------------------------------
+" Theme
+" ----------------------------------------------------------------------------
+set guifont="Fira Code 12"
+set background=dark
 
-if $TERM == 'linux'
-    colorscheme Tomorrow-Night-Eighties
-else
-    try
-        colorscheme Tomorrow-Night-Eighties
-    catch
-        colorscheme desert
-    endtry
-endif
+try
+    " colorscheme Tomorrow-Night-Eighties
+    colorscheme NeoSolarized
+catch
+    colorscheme desert
+endtry
