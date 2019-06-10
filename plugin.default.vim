@@ -29,7 +29,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t' " just show filename
 let g:airline#extensions#tabline#fnamecollapse = 0
-let g:gruvbox_contrast_light = 'light'
 " syntax not 100% correct, but faster, refresh with :AirlineRefresh :
 let g:airline_highlighting_cache = 1
 " do not show default correct utf-8 unix status
@@ -64,6 +63,9 @@ endif
 let g:airline_symbols.readonly = ""
 let g:airline_symbols.spell = '暈'
 let g:airline_symbols.paste = ''
+
+" theme gruvbox
+let g:gruvbox_contrast_light = 'light'
 
 " vim-template
 " Try to get email and name from git
