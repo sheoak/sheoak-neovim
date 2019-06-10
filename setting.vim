@@ -32,8 +32,11 @@ set guifont="Fira Code 12"
 set background=dark
 
 try
-    " colorscheme Tomorrow-Night-Eighties
-    colorscheme NeoSolarized
+    if empty($DISPLAY)
+        colorscheme gruvbox
+    else
+        colorscheme Tomorrow-Night-Eighties
+    endif
 catch
     colorscheme desert
 endtry
