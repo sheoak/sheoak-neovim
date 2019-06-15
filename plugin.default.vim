@@ -164,3 +164,6 @@ endif
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noruler
 autocmd  BufLeave *   set laststatus=2 ruler
+
+" Ansible
+let g:ansible_unindent_after_newline = 1

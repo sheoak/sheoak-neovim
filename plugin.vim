@@ -134,3 +134,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 " After - plugins that must be loaded last
 Plug 'ryanoasis/vim-devicons'          " icons, must be loaded after the rest
 
+" Ansible
+Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; ./generate.py' }
+
