@@ -12,8 +12,7 @@
 " See README.md and documentation for more informations
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vimpath = "~/.config/nvim/"
-
+let s:vimpath = "~/.config/nvim/"
 if has('nvim')
     let s:plug_path=$HOME . '/.local/share/nvim/plugged'
 else
@@ -21,19 +20,19 @@ else
 endif
 
 call plug#begin(s:plug_path)
-    execute "source " . g:vimpath . "plugin.vim"
+    execute "source " . s:vimpath . "plugin.vim"
 call plug#end()
 
-execute "source " . g:vimpath . "setting.vim"
-execute "source " . g:vimpath . "autocommand.vim"
+execute "source " . s:vimpath . "setting.vim"
+execute "source " . s:vimpath . "autocommand.vim"
 
 " default and individual plugin settings (for complex settings)
-for path in split(glob(g:vimpath. 'plugin.*.vim'), '\n')
+for path in split(glob(s:vimpath. 'plugin.*.vim'), '\n')
     execute "source " . path
 endfor
 
 " custom mappings, including plugin mappings
-execute "source " . g:vimpath . "mapping.vim"
+execute "source " . s:vimpath . "mapping.vim"
 
 " Load private files (bookmarks, custom alias…)
 " use runtimepath so that you can have plugin/ after/… folders
