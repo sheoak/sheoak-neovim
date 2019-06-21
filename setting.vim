@@ -37,6 +37,11 @@ if $TERM != 'linux'
 endif
 
 try
+    " neosolarized
+    let g:neosolarized_bold = 1
+    let g:neosolarized_underline = 1
+    let g:neosolarized_italic = 1
+    let g:neosolarized_termtrans = 1
     colorscheme NeoSolarized
 catch
     colorscheme desert

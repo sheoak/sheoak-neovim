@@ -174,14 +174,3 @@ let g:ansible_unindent_after_newline = 1
 " vim-virtualenv
 let g:virtualenv_auto_activate = 1
 let g:virtualenv_directory = "$HOME/.virtualenvs"
-
-" nvim-colors-solarized
-let g:solarized_termtrans = 1
-" let g:solarized_termcolors = 256
-
-" neosolarized
-let g:neosolarized_bold = 1
-let g:neosolarized_underline = 1
-let g:neosolarized_italic = 1
-let g:neosolarized_termtrans = 1
-let g:solarized_termcolors = 16

@@ -6,8 +6,7 @@
 "
 " :PlugInstall
 "
-" Maintainer: sheoak
-" Version:    O.3
+" Maintainer: sheoak <contact [at] sheoak.fr>
 "
 " See README.md and documentation for more informations
 "
