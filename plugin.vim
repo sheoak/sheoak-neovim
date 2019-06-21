@@ -6,6 +6,7 @@
 " Disabled plugins
 " ----------------------------------------------------------------------------
 " Plug 'bfredl/nvim-ipy'
+Plug 'plytophogy/vim-virtualenv'
 
 " ----------------------------------------------------------------------------
 " Under testing …
@@ -115,6 +116,7 @@ Plug 'jaxbot/browserlink.vim', { 'for': ['html', 'css', 'js', 'sass', 'scss'] }
 Plug 'tmhedberg/matchit',      { 'for': ['html', 'xml'] }
 Plug 'posva/vim-vue',          { 'for': ['js'] }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'ap/vim-css-color'
 
 " PHP
 Plug 'tobyS/pdv' ,                       { 'for': 'php' }
@@ -127,6 +129,7 @@ Plug 'elzr/vim-json',                { 'for': 'json' }
 
 " System
 Plug 'PotatoesMaster/i3-vim-syntax', { 'for': 'i3' }
+Plug 'neomutt/neomutt.vim'
 
 " Text files
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
