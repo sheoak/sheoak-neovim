@@ -34,8 +34,17 @@ let g:airline_highlighting_cache = 1
 " do not show default correct utf-8 unix status
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 
-" Icons and labels, but not in tty
-if $TERM != 'linux'
+
+" solarized-airline
+let g:airline_solarized_normal_green = 1
+let g:airline_solarized_dark_text = 1
+let g:airline_solarized_dark_inactive_border = 1
+
+if $TERM == 'linux'
+  " tty
+  let g:solarized_base16 = 1
+else
+  " non-tty, add nerd font icons
   let g:airline#extensions#obsession#indicator_text = ''
   let g:airline_mode_map = {
         \ '__' : '-',
