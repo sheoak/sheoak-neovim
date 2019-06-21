@@ -31,12 +31,14 @@ endif
 set guifont="Fira Code 12"
 set background=dark
 
+" avoid theme issues in tty
+if $TERM != 'linux'
+    set termguicolors
+endif
+
 try
-    if empty($DISPLAY)
-        colorscheme gruvbox
-    else
-        colorscheme Tomorrow-Night-Eighties
-    endif
+    colorscheme NeoSolarized
 catch
     colorscheme desert
 endtry
+

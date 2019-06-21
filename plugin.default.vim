@@ -34,38 +34,40 @@ let g:airline_highlighting_cache = 1
 " do not show default correct utf-8 unix status
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 
-" Icons and labels:
-let g:airline#extensions#obsession#indicator_text = ''
-let g:airline_mode_map = {
-      \ '__' : '-',
-      \ 'c'  : ' command',
-      \ 'i'  : ' insert',
-      \ 'ic' : ' insert',
-      \ 'ix' : ' insert',
-      \ 'n'  : ' normal',
-      \ 'ni' : ' normal',
-      \ 'no' : ' normal',
-      \ 'R'  : '﯒ replace',
-      \ 'Rv' : '﯒ replace',
-      \ 's'  : ' select',
-      \ 'S'  : ' select',
-      \ '' : ' select',
-      \ 't'  : ' terminal',
-      \ 'v'  : ' visual',
-      \ 'V'  : ' visual Line',
-      \ '' : ' visual Block',
-\ }
+" Icons and labels, but not in tty
+if $TERM != 'linux'
+  let g:airline#extensions#obsession#indicator_text = ''
+  let g:airline_mode_map = {
+        \ '__' : '-',
+        \ 'c'  : ' command',
+        \ 'i'  : ' insert',
+        \ 'ic' : ' insert',
+        \ 'ix' : ' insert',
+        \ 'n'  : ' normal',
+        \ 'ni' : ' normal',
+        \ 'no' : ' normal',
+        \ 'R'  : '﯒ replace',
+        \ 'Rv' : '﯒ replace',
+        \ 's'  : ' select',
+        \ 'S'  : ' select',
+        \ '' : ' select',
+        \ 't'  : ' terminal',
+        \ 'v'  : ' visual',
+        \ 'V'  : ' visual Line',
+        \ '' : ' visual Block',
+  \ }
 
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+  if !exists('g:airline_symbols')
+      let g:airline_symbols = {}
+  endif
+
+  let g:airline_symbols.readonly = ""
+  let g:airline_symbols.spell = '暈'
+  let g:airline_symbols.paste = ''
 endif
 
-let g:airline_symbols.readonly = ""
-let g:airline_symbols.spell = '暈'
-let g:airline_symbols.paste = ''
-
 " theme gruvbox
-let g:gruvbox_contrast_light = 'light'
+" let g:gruvbox_contrast_light = 'light'
 
 " vim-template
 " Try to get email and name from git
@@ -119,6 +121,7 @@ let g:mkdp_browser = 'qutebrowser'
 
 " Git-gutter
 set updatetime=100
+let g:gitgutter_override_sign_column_highlight = 0
 
 " Grammarous
 let g:grammarous#default_comments_only_filetypes = {
@@ -167,3 +170,18 @@ autocmd  BufLeave *   set laststatus=2 ruler
 
 " Ansible
 let g:ansible_unindent_after_newline = 1
+
+" vim-virtualenv
+let g:virtualenv_auto_activate = 1
+let g:virtualenv_directory = "$HOME/.virtualenvs"
+
+" nvim-colors-solarized
+let g:solarized_termtrans = 1
+" let g:solarized_termcolors = 256
+
+" neosolarized
+let g:neosolarized_bold = 1
+let g:neosolarized_underline = 1
+let g:neosolarized_italic = 1
+let g:neosolarized_termtrans = 1
+let g:solarized_termcolors = 16
