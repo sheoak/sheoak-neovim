@@ -16,6 +16,16 @@ augroup fileDetect
     au BufEnter *mutt-*     setlocal filetype=mail
     au BufEnter Makefile    setlocal noexpandtab
 
+    " open special files in vim, like annoying docx…
+    autocmd BufReadPre *.docx silent set ro
+    autocmd BufEnter *.docx silent set modifiable
+    autocmd BufEnter *.docx silent  %!pandoc --columns=78 -f docx -t markdown "%"
+    autocmd BufReadPost *.doc,*.rtf,*.odp,*.odt silent %!pandoc "%" -t markdown -o /dev/stdout
+
+    " Read-only pdf through pdftotext
+    autocmd BufReadPre *.pdf silent set ro
+    autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk -layout -q -eol unix "%" - | fmt -w78
+
     " Special settings for passwords files
     au BufEnter /dev/shm/*  setlocal nobackup noswapfile noundofile
 
