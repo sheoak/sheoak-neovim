@@ -182,3 +182,10 @@ let g:ansible_unindent_after_newline = 1
 " vim-virtualenv
 let g:virtualenv_auto_activate = 1
 let g:virtualenv_directory = "$HOME/.virtualenvs"
+
+" vCoolor.vim
+let g:vcoolor_disable_mappings = 1
+
+" thesaurus_query
+" undocumented option to remove mappings
+let g:tq_map_keys = 0
