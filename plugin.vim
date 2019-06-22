@@ -117,6 +117,8 @@ Plug 'tmhedberg/matchit',      { 'for': ['html', 'xml'] }
 Plug 'posva/vim-vue',          { 'for': ['js'] }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'ap/vim-css-color'
+Plug 'KabbAmine/vCoolor.vim'   " color picker
+Plug 'amadeus/vim-convert-color-to'
 
 " PHP
 Plug 'tobyS/pdv' ,                       { 'for': 'php' }

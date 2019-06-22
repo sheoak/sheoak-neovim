@@ -110,8 +110,15 @@ nmap <leader>pI :w<CR>:source ~/.config/nvim/init.vim<CR>:PlugInstall<CR>
 nmap <leader>m :make<CR>
 nmap <leader>tt :!tox<CR>
 nmap <leader>tp :!pytest<CR>
+" css colors insert/convert via plugins
+nmap <leader>ch :VCoolor<CR>
+nmap <leader>cr :VCoolIns r<CR>
+nmap <leader>ca :VCoolIns ra<CR>
+nmap <leader>cH :ConvertColorTo hex<CR>
+nmap <leader>cR :ConvertColorTo rgb<CR>
+nmap <leader>cA :ConvertColorTo rgba<CR>
 " Order all css properties
-nnoremap <leader>c :<C-u>g/{/ .+1,/}/-1 sort<CR>
+nnoremap <leader>cs :<C-u>g/{/ .+1,/}/-1 sort<CR>
 
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
             \ | wincmd p | diffthis
