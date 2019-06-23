@@ -16,12 +16,16 @@ augroup fileDetect
     au BufEnter *mutt-*     setlocal filetype=mail
     au BufEnter Makefile    setlocal noexpandtab
 
-    " open special files in vim, like annoying docx…
+    " open special files in vim, like annoying docx or rtf…
     autocmd BufReadPre *.docx silent set ro
-    autocmd BufEnter *.docx silent set modifiable
-    autocmd BufEnter *.docx silent  %!pandoc --columns=78 -f docx -t markdown "%"
-    autocmd BufReadPost *.doc,*.rtf,*.odp,*.odt silent %!pandoc "%" -t markdown -o /dev/stdout
-
+    " autocmd BufEnter *.docx silent set modifiable
+    autocmd BufReadPost *.docx                  silent %!pandoc --columns=78 "%" -f docx -t markdown "%" -d /dev/stdout
+    autocmd BufReadPost *.odp,*.odt silent %!pandoc --columns=78 "%" -t markdown -o /dev/stdout
+    autocmd BufReadPre *.doc silent set ro
+    autocmd BufReadPost *.doc silent %!antiword "%"
+    " Read-only rtf through unrtf
+    autocmd BufReadPre *.rtf silent set ro
+    autocmd BufReadPost *.rtf silent %!unrtf --text
     " Read-only pdf through pdftotext
     autocmd BufReadPre *.pdf silent set ro
     autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk -layout -q -eol unix "%" - | fmt -w78
