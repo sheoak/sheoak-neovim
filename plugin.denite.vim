@@ -68,13 +68,13 @@ endif
 " Move up/down into candidate list - easier than CTRL-n/p
 call denite#custom#map(
       \ 'insert',
-      \ '<C-s>',
+      \ '<C-n>',
       \ '<denite:move_to_next_line>',
       \ 'noremap'
       \)
 call denite#custom#map(
       \ 'insert',
-      \ '<C-r>',
+      \ '<C-p>',
       \ '<denite:move_to_previous_line>',
       \ 'noremap'
       \)
