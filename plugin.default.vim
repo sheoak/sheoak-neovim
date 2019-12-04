@@ -125,7 +125,7 @@ let g:gutentags_ctags_tagfile=".ctags"
 let g:gutentags_exclude_project_root=['/etc']
 
 " vim-markdown
-let g:mkdp_browser = 'qutebrowser'
+let g:mkdp_browser = 'firefox'
 
 " Git-gutter
 set updatetime=100
