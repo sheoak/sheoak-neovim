@@ -57,6 +57,8 @@ augroup fileTypes
     au FileType html,css,sass,less
         \ imap <buffer> <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
+    au FileType vue setlocal commentstring=//\ %s
+
     " omnifunc by types
     au FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
     au FileType xml           setlocal omnifunc=xmlcomplete#CompleteTags
