@@ -123,7 +123,12 @@ let g:neosnippet#scope_aliases['python'] = 'python,django'
 " Gutentag
 let g:gutentags_ctags_tagfile=".ctags"
 let g:gutentags_exclude_project_root=['/etc']
-
+let g:gutentags_project_root = ['.git', '.svn', '.project' ]
+let g:gutentags_file_list_command = {
+      \  'markers': {
+      \  '.git': 'git ls-files'
+      \  }
+    \  }
 " vim-markdown
 let g:mkdp_browser = 'firefox'
 
