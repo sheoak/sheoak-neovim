@@ -35,7 +35,8 @@ Plug 'vim-airline/vim-airline-themes'  " Airline themes
 " ----------------------------------------------------------------------------
 " Shougo plugin suite
 " ----------------------------------------------------------------------------
-Plug 'Shougo/denite.nvim', { 'tag': '2.1' }
+"Plug 'Shougo/denite.nvim', { 'tag': '2.1' }
+Plug 'Shougo/denite.nvim'
 if has('nvim')
     Plug 'Shougo/deoplete.nvim',
 else
