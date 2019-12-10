@@ -42,7 +42,8 @@ try
     let g:neosolarized_underline = 1
     let g:neosolarized_italic = 1
     let g:neosolarized_termtrans = 1
-    colorscheme NeoSolarized
+    "colorscheme NeoSolarized
+    colorscheme OceanicNext
 catch
     colorscheme desert
 endtry
