@@ -6,14 +6,18 @@
 " Disabled plugins
 " ----------------------------------------------------------------------------
 " Plug 'bfredl/nvim-ipy'
-Plug 'plytophogy/vim-virtualenv'
+" Plug 'plytophogy/vim-virtualenv'
+" Plug 'kana/vim-operator-user'          " Grammarous dep
+" Plug 'kristijanhusak/deoplete-phpactor', { 'for': 'php' }
+" Plug 'AndrewRadev/sideways.vim'        " Moving arguments and attributes
+" Plug 'airblade/vim-rooter'             " Auto cd to project dir
+" Plug 'jaxbot/browserlink.vim', { 'for': ['html', 'css', 'js', 'sass', 'scss'] }
 
 " ----------------------------------------------------------------------------
 " Under testing …
 " ----------------------------------------------------------------------------
 Plug 'chrisbra/csv.vim'
 Plug 'SidOfc/mkdx'                     " Markdown goodies
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 " ----------------------------------------------------------------------------
 " My custom plugins
@@ -26,7 +30,8 @@ Plug 'sheoak/vim-unimpaired-extras'    " Additionnal vim-unimpaired mappings
 " Themes and styling
 " ----------------------------------------------------------------------------
 Plug 'iCyMind/NeoSolarized'
-Plug 'morhetz/gruvbox'
+Plug 'cormacrelf/vim-colors-github'
+Plug 'mhartington/oceanic-next'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'junegunn/vim-emoji'
 Plug 'vim-airline/vim-airline'         " Cool status bar
@@ -53,9 +58,10 @@ Plug 'Shougo/neosnippet-snippets'
 " Extra sources
 Plug 'kmnk/denite-dirmark'
 Plug 'pocari/vim-denite-emoji'
-" Plug 'kristijanhusak/deoplete-phpactor', { 'for': 'php' }
 Plug 'deoplete-plugins/deoplete-zsh'
 Plug 'wokalski/autocomplete-flow', { 'for': 'js' }
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } " javascript
+Plug 'zchee/deoplete-jedi',      { 'for': 'python' }
 
 " ----------------------------------------------------------------------------
 " All languages plugins
@@ -81,41 +87,38 @@ Plug 'michaeljsmith/vim-indent-object' " Indentation text objects
 Plug 'jeetsukumaran/vim-indentwise'    " Motion for indentations
 Plug 'jeetsukumaran/vim-pythonsense'   " Additionnal python text-objects
 Plug 'PeterRincker/vim-argumentative'  " Switch arguments
-Plug 'AndrewRadev/sideways.vim'        " Moving arguments and attributes
 Plug 'junegunn/goyo.vim'               " Minimalist interface on demand
 Plug 'dmerejkowsky/vim-ale'            " Async Linter
 Plug 'sjl/gundo.vim'                   " More undo
 Plug 'junegunn/vim-easy-align'         " Align tabs
 Plug 'dhruvasagar/vim-table-mode'      " Make table easily
 Plug 'editorconfig/editorconfig-vim'   " Read editorconfig file
-Plug 'airblade/vim-rooter'             " Auto cd to project dir
 Plug 'fboender/bexec'                  " Execute current script
 Plug 'sakhnik/nvim-gdb',               " A debugger that actually works
 Plug 'airblade/vim-gitgutter'          " Git gutter on the left
 Plug 'rbgrouleff/bclose.vim'           " Ranger plugin dependency
 Plug 'francoiscabrol/ranger.vim'       " Ranger integration
-Plug 'kana/vim-operator-user'          " Grammarous dep
 Plug 'aperezdc/vim-template'           " Auto-template when opening new file
-Plug 'honza/vim-snippets'              " Snippets for different languages
+Plug 'sheoak/vim-snippets'             " Snippets for different languages
 Plug 'diepm/vim-rest-console'          " Call REST API from vim
 Plug 'rhysd/vim-grammarous'            " Grammar check
+Plug 'osyo-manga/vim-over'             " Live matching on command line
 
 " ----------------------------------------------------------------------------
 " Filetype specific plugins
 " ----------------------------------------------------------------------------
 " Python
 Plug 'davidhalter/jedi-vim',         { 'for': 'python' }
-Plug 'zchee/deoplete-jedi',          { 'for': 'python' }
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'numirias/semshi',              { 'for': 'python',
     \ 'do': ':UpdateRemotePlugins'} " semantic syntax
 
 " Web
-Plug 'mattn/emmet-vim',        { 'for': ['html','css', 'scss', 'sass'] }
+Plug 'mattn/emmet-vim',        { 'for': ['html','css', 'scss', 'sass', 'vue'] }
 Plug 'alvan/vim-closetag',     { 'for': ['html','css', 'scss', 'sass'] }
-Plug 'jaxbot/browserlink.vim', { 'for': ['html', 'css', 'js', 'sass', 'scss'] }
 Plug 'tmhedberg/matchit',      { 'for': ['html', 'xml'] }
-Plug 'posva/vim-vue',          { 'for': ['js'] }
+Plug 'digitaltoad/vim-pug',    { 'for': ['vue', 'pug'] }
+Plug 'posva/vim-vue',          { 'for': ['js', 'vue'] }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'ap/vim-css-color'
 Plug 'KabbAmine/vCoolor.vim'   " color picker
@@ -123,7 +126,6 @@ Plug 'amadeus/vim-convert-color-to'
 
 " PHP
 Plug 'tobyS/pdv' ,                       { 'for': 'php' }
-Plug 'phpactor/phpactor' ,               { 'do': 'composer install', 'for': 'php'}
 Plug 'noahfrederick/vim-composer'
 
 " Javascript
@@ -142,4 +144,3 @@ Plug 'ryanoasis/vim-devicons'          " icons, must be loaded after the rest
 
 " Ansible
 Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; ./generate.py' }
-
