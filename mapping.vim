@@ -135,3 +135,13 @@ nnoremap <leader>  :%s/\(\S\) \([:;?!]\)/\1 \2/g<CR>
 
 " vim-bookmarks
 nnoremap ms <Plug>BookmarkShowAll
+
+
+" Experiment
+" Repeat on all selected lines
+vmap . :normal .
+" shortcut to @: for bepo
+map @. @:
+" select last paste in visual mode
+" https://dalibornasevic.com/posts/43-12-vim-tips
+nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
