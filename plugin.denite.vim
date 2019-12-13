@@ -28,6 +28,7 @@ endfunction
 
 autocmd FileType denite-filter call s:denite_filter_settings()
 function! s:denite_filter_settings() abort
+    inoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
     inoremap <silent><buffer> <C-n> <Esc><C-w>p:call cursor(line('.')+1,0)<CR><C-w>pA
     inoremap <silent><buffer> <C-p> <Esc><C-w>p:call cursor(line('.')-1,0)<CR><C-w>pA
     inoremap <silent><buffer><expr> <tab> denite#do_map('choose_action')
