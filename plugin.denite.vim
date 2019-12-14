@@ -33,6 +33,7 @@ function! s:denite_filter_settings() abort
     inoremap <silent><buffer> <C-p> <Esc><C-w>p:call cursor(line('.')-1,0)<CR><C-w>pA
     inoremap <silent><buffer><expr> <tab> denite#do_map('choose_action')
     inoremap <silent><buffer><expr> <C-g> denite#do_map('quit')
+    inoremap <silent><buffer><expr> <Esc> denite#do_map('quit')
 endfunction
 
 let s:denite_options = {
