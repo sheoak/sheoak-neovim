@@ -20,7 +20,7 @@ noremap <Space> <PageDown>
 tnoremap <C-g> <C-\><C-n>
 
 " ----------------------------------------------------------------------------
-" Plugin pre-configuration for bepotimist
+" Plugin pre-configuration for bepoptimist
 " It needs to be in the main configuration because of loading priorities
 " ----------------------------------------------------------------------------
 let g:surround_no_mappings = 1
@@ -88,44 +88,43 @@ inoremap <expr> <c-x><c-l> fzf#vim#complete(fzf#wrap({
             \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }}))
 
 
-" Executing
+" Executing (mostly leader key)
 " -----------------------------------------------------------------------------
-
-nmap <leader>p <Nop>
-nmap <leader>s <Nop>
-" ALE
-nmap <leader>af <Plug>(ale_fix)
-nmap <leader>ad <Plug>(ale_detail)
-" Bexec
-vmap <leader>x :call bexec#Visual()<CR>
-nmap <leader>x :call bexec#Normal()<CR>
-nmap <leader>l :call bexec#Live()<CR>
-nmap <leader>pi :PlugInstall<CR>
-nmap <leader>pu :PlugUpdate<CR>
-nmap <leader>pU :PlugUpgrade<CR>
-nmap <leader>pc :PlugClean<CR>
-nmap <leader>ps :PlugStatus<CR>
-nmap <leader>pd :PlugDiff<CR>
-nmap <leader>pI :w<CR>:source ~/.config/nvim/init.vim<CR>:PlugInstall<CR>
-nmap <leader>m :make<CR>
-nmap <leader>tt :!tox<CR>
-nmap <leader>tp :!pytest<CR>
-" css colors insert/convert via plugins
-nmap <leader>ch :VCoolor<CR>
-nmap <leader>cr :VCoolIns r<CR>
-nmap <leader>ca :VCoolIns ra<CR>
-nmap <leader>cH :ConvertColorTo hex<CR>
-nmap <leader>cR :ConvertColorTo rgb<CR>
-nmap <leader>cA :ConvertColorTo rgba<CR>
-" Order all css properties
-nnoremap <leader>cs :<C-u>g/{/ .+1,/}/-1 sort<CR>
-
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
             \ | wincmd p | diffthis
+
+" ALE
+nmap <leader>ad <Plug>(ale_detail)
+nmap <leader>af <Plug>(ale_fix)
+" css colors insert/convert via plugins
+nmap <leader>cA :ConvertColorTo rgba<CR>
+nmap <leader>ca :VCoolIns ra<CR>
+nmap <leader>cH :ConvertColorTo hex<CR>
+nmap <leader>ch :VCoolor<CR>
+nmap <leader>cR :ConvertColorTo rgb<CR>
+nmap <leader>cr :VCoolIns r<CR>
 nnoremap <leader>do :DiffOrig<CR>
+" Order all css properties
+nnoremap <leader>cs :<C-u>g/{/ .+1,/}/-1 sort<CR>
+nmap <leader>f :Prettier<CR>
+nmap <leader>m :make<CR>
+nmap <leader>pc :PlugClean<CR>
+nmap <leader>pd :PlugDiff<CR>
+nmap <leader>pi :PlugInstall<CR>
+nmap <leader>pI :w<CR>:source ~/.config/nvim/init.vim<CR>:PlugInstall<CR>
+nmap <leader>p <Nop>
+nmap <leader>ps :PlugStatus<CR>
+nmap <leader>pu :PlugUpdate<CR>
+nmap <leader>pU :PlugUpgrade<CR>
+nmap <leader>s <Nop>
+nmap <leader>tp :!pytest<CR>
+nmap <leader>tt :!tox<CR>
+" Bexec
+nmap <leader>X :call bexec#Live()<CR>
+nmap <leader>x :call bexec#Normal()<CR>
+vmap <leader>x :call bexec#Visual()<CR>
 " Clean dirty white space (EOL)
 nnoremap <leader><space> :silent! %s/\s\+$//<CR>
-
 " Forgotten unbreakable spaces… for French only
 " TODO: operator cleaner?
 nnoremap <leader>  :%s/\(\S\) \([:;?!]\)/\1 \2/g<CR>
@@ -135,7 +134,6 @@ nnoremap <leader>  :%s/\(\S\) \([:;?!]\)/\1 \2/g<CR>
 
 " vim-bookmarks
 nnoremap ms <Plug>BookmarkShowAll
-
 
 " Experiment
 " Repeat on all selected lines
