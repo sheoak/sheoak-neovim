@@ -13,9 +13,16 @@ let g:python3_host_prog=expand('~/.virtualenvs/neovim3/bin/python')
 let g:user_emmet_install_global = 0
 
 " ALE
-let g:ale_fixers = ['prettier', 'stylelint', 'eslint', 'autopep8', 'yapf',
-            \   'remove_trailing_lines', 'trim_whitespace' ]
-let b:ale_warn_about_trailing_whitespace = 0
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace', 'stylelint'],
+\   'python': ['autopep8', 'yapf'],
+\   'javascript': ['eslint'],
+\   'vue': ['eslint']
+\}
+let g:ale_warn_about_trailing_whitespace = 0
+let g:ale_linters = {
+\   '*': ['eslint']
+\ }
 
 " vim-rooter
 let g:rooter_patterns = ['Rakefile', '.git/', 'package.json', '.projectroot']
@@ -194,3 +201,11 @@ let g:vcoolor_disable_mappings = 1
 " thesaurus_query
 " undocumented option to remove mappings
 let g:tq_map_keys = 0
+
+" prettier
+let g:prettier#exec_cmd_async = 1
+let g:prettier#quickfix_enabled = 0
+let g:prettier#quickfix_auto_focus = 0
+let g:prettier#autoformat = 0
+"let g:prettier#config#semi = 'false'
+let g:prettier#config#config_precedence = 'file-override'
