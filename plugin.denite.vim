@@ -39,6 +39,7 @@ endfunction
 let s:denite_options = {
       \ 'prompt' : '❯',
       \ 'start_filter': 1,
+      \ 'split': 'floating',
       \ 'winheight': 11,
       \ 'source_names': 'short',
       \ 'direction': 'botright',

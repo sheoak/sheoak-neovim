@@ -5,19 +5,33 @@
 " ----------------------------------------------------------------------------
 " Disabled plugins
 " ----------------------------------------------------------------------------
-" Plug 'bfredl/nvim-ipy'
-" Plug 'plytophogy/vim-virtualenv'
-" Plug 'kana/vim-operator-user'          " Grammarous dep
-" Plug 'kristijanhusak/deoplete-phpactor', { 'for': 'php' }
-" Plug 'AndrewRadev/sideways.vim'        " Moving arguments and attributes
 " Plug 'airblade/vim-rooter'             " Auto cd to project dir
-" Plug 'jaxbot/browserlink.vim', { 'for': ['html', 'css', 'js', 'sass', 'scss'] }
 
 " ----------------------------------------------------------------------------
 " Under testing …
 " ----------------------------------------------------------------------------
 Plug 'chrisbra/csv.vim'
 Plug 'SidOfc/mkdx'                     " Markdown goodies
+
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'branch': 'release/1.x',
+  \ 'for': [
+    \ 'javascript',
+    \ 'typescript',
+    \ 'css',
+    \ 'less',
+    \ 'scss',
+    \ 'json',
+    \ 'graphql',
+    \ 'markdown',
+    \ 'vue',
+    \ 'lua',
+    \ 'php',
+    \ 'python',
+    \ 'ruby',
+    \ 'html',
+    \ 'swift' ] }
 
 " ----------------------------------------------------------------------------
 " My custom plugins
@@ -40,7 +54,6 @@ Plug 'vim-airline/vim-airline-themes'  " Airline themes
 " ----------------------------------------------------------------------------
 " Shougo plugin suite
 " ----------------------------------------------------------------------------
-"Plug 'Shougo/denite.nvim', { 'tag': '2.1' }
 Plug 'Shougo/denite.nvim'
 if has('nvim')
     Plug 'Shougo/deoplete.nvim',
@@ -56,7 +69,6 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 
 " Extra sources
-Plug 'kmnk/denite-dirmark'
 Plug 'pocari/vim-denite-emoji'
 Plug 'deoplete-plugins/deoplete-zsh'
 Plug 'wokalski/autocomplete-flow', { 'for': 'js' }
@@ -66,7 +78,6 @@ Plug 'zchee/deoplete-jedi',      { 'for': 'python' }
 " ----------------------------------------------------------------------------
 " All languages plugins
 " ----------------------------------------------------------------------------
-Plug 'tpope/vim-obsession'             " Actually usable session system
 Plug 'tpope/vim-fugitive'              " Git integration
 Plug 'tpope/vim-surround'              " Motions around words
 Plug 'tpope/vim-repeat'                " Missing repeat with dot
@@ -77,14 +88,12 @@ Plug 'tpope/vim-sleuth'                " Detect tab settings
 Plug 'Ron89/thesaurus_query.vim'       " Synonyms
 Plug 'junegunn/fzf.vim'                " fuzzy find wrapper
 Plug 'mhinz/vim-startify'              " Startup screen
-Plug 'terryma/vim-multiple-cursors'    " Multi-selection (c-n)
 Plug 'MattesGroeger/vim-bookmarks'     " Annotations
 Plug 'ludovicchabant/vim-gutentags'    " Ctags generation
 Plug 'justinmk/vim-sneak'              " Multiline f/F/t/T
 Plug 'wellle/targets.vim'              " Additionnal text objects: cin) or da,…
 Plug 'bkad/CamelCaseMotion'            " Additionnal CamelCase motions
 Plug 'michaeljsmith/vim-indent-object' " Indentation text objects
-Plug 'jeetsukumaran/vim-indentwise'    " Motion for indentations
 Plug 'jeetsukumaran/vim-pythonsense'   " Additionnal python text-objects
 Plug 'PeterRincker/vim-argumentative'  " Switch arguments
 Plug 'junegunn/goyo.vim'               " Minimalist interface on demand
@@ -101,6 +110,7 @@ Plug 'francoiscabrol/ranger.vim'       " Ranger integration
 Plug 'aperezdc/vim-template'           " Auto-template when opening new file
 Plug 'sheoak/vim-snippets'             " Snippets for different languages
 Plug 'diepm/vim-rest-console'          " Call REST API from vim
+Plug 'kana/vim-operator-user'          " Grammarous dep
 Plug 'rhysd/vim-grammarous'            " Grammar check
 Plug 'osyo-manga/vim-over'             " Live matching on command line
 
