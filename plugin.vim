@@ -13,26 +13,6 @@
 Plug 'chrisbra/csv.vim'
 Plug 'SidOfc/mkdx'                     " Markdown goodies
 
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install',
-  \ 'branch': 'release/1.x',
-  \ 'for': [
-    \ 'javascript',
-    \ 'typescript',
-    \ 'css',
-    \ 'less',
-    \ 'scss',
-    \ 'json',
-    \ 'graphql',
-    \ 'markdown',
-    \ 'vue',
-    \ 'lua',
-    \ 'php',
-    \ 'python',
-    \ 'ruby',
-    \ 'html',
-    \ 'swift' ] }
-
 " ----------------------------------------------------------------------------
 " My custom plugins
 " ----------------------------------------------------------------------------
