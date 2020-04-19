@@ -1,9 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom mappings
 " See bepotimist for homerow related mappings (tsrn)
-"
-" TODO: find a key and remap mkdx https://github.com/SidOfc/mkdx
-"       candidate are È ù œ (if moving tab)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " ----------------------------------------------------------------------------
@@ -28,7 +25,6 @@ let g:ranger_map_keys = 0
 let g:bexec_no_mappings = 1
 let g:bclose_no_plugin_maps = 1
 let g:nvimgdb_disable_start_keymaps = 1
-
 let g:user_emmet_leader_key='<C-y>'
 let g:jedi#documentation_command = 'gh'   " vim Jedi needs to use the same key
 let g:jedi#completions_command = ""
@@ -38,6 +34,8 @@ let g:jedi#goto_assignments_command = ''
 let g:jedi#goto_command = ''
 let g:table_mode_map_prefix = ',\|'
 let g:sneak#target_labels = "auiectsrnovdl"
+" let deoplete handle jedi
+let g:jedi#completions_enabled = 0
 " hack for sneak, to avoid remapping
 nmap , <Nop>
 
