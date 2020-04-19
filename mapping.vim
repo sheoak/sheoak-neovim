@@ -141,3 +141,5 @@ map @. @:
 " select last paste in visual mode
 " https://dalibornasevic.com/posts/43-12-vim-tips
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+" to match C and D behavior
+nnoremap Y y$
