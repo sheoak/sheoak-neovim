@@ -34,7 +34,7 @@ Plug 'vim-airline/vim-airline-themes'  " Airline themes
 " ----------------------------------------------------------------------------
 " Shougo plugin suite
 " ----------------------------------------------------------------------------
-Plug 'Shougo/denite.nvim'
+" Plug 'Shougo/denite.nvim'
 if has('nvim')
     Plug 'Shougo/deoplete.nvim',
 else
@@ -49,7 +49,7 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 
 " Extra sources
-Plug 'pocari/vim-denite-emoji'
+" Plug 'pocari/vim-denite-emoji'
 Plug 'deoplete-plugins/deoplete-zsh'
 Plug 'wokalski/autocomplete-flow', { 'for': 'js' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } " javascript
@@ -67,6 +67,7 @@ Plug 'tpope/vim-unimpaired'            " Pairing mapping
 Plug 'tpope/vim-sleuth'                " Detect tab settings
 Plug 'Ron89/thesaurus_query.vim'       " Synonyms
 Plug 'junegunn/fzf.vim'                " fuzzy find wrapper
+Plug 'yuki-ycino/fzf-preview.vim'      " fzf with preview
 Plug 'mhinz/vim-startify'              " Startup screen
 Plug 'MattesGroeger/vim-bookmarks'     " Annotations
 Plug 'ludovicchabant/vim-gutentags'    " Ctags generation
