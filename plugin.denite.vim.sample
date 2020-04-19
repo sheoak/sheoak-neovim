@@ -1,4 +1,6 @@
 
+finish
+
 if (!exists("g:plugs['denite.nvim']"))
     finish
 endif

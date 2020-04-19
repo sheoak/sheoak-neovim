@@ -1,7 +1,33 @@
+" ----------------------------------------------------------------------------
+" Goodies for FZF-preview & FZF
+" ----------------------------------------------------------------------------
 
+" ----------------------------------------------------------------------------
+" CONFIGURATION
+" ----------------------------------------------------------------------------
+" fzf
 " Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
+" floating windows from preview also for FZF!
+let g:fzf_layout = { 'window': 'call fzf_preview#window#create_centered_floating_window()' }
 
+" fzf-preview
+" see plugin/fzf-addons.vim for custom methods
+let g:fzf_preview_use_dev_icons = 1
+" Commands used to get the file list from current directory
+let g:fzf_preview_directory_files_command = 'rg --files --ignore-file $DOTFILES_PRIVATE/agignore --hidden --no-messages -g \!"* *"'
+let g:fzf_preview_filelist_command = 'rg --files --ignore-file $DOTFILES_PRIVATE/agignore --hidden --no-messages -g \!"* *"' " Installed ripgrep
+
+
+" ----------------------------------------------------------------------------
+" MAPPINGS
+" ----------------------------------------------------------------------------
+" we keep the FZF logic with "," prefix
+nnoremap ,z :call FzfSpell()<CR>
+
+" ----------------------------------------------------------------------------
+" COMMANDS
+" ----------------------------------------------------------------------------
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
@@ -20,23 +46,52 @@ command! -bang -nargs=* Rg
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
-" Custom function example:
-" command! -bang -nargs=? -complete=dir HFiles
-" \ call fzf#vim#files(<q-args>, {'source': 'ag --hidden --ignore .git -g ""'}, <bang>0)
+" ----------------------------------------------------------------------------
+" ADDONS
+" ----------------------------------------------------------------------------
 
-" Customize fzf colors to match your color scheme
-let g:fzf_colors = {
-            \ 'fg':      ['fg', 'Normal'],
-            \ 'bg':      ['bg', 'Normal'],
-            \ 'hl':      ['fg', 'Comment'],
-            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-            \ 'hl+':     ['fg', 'Statement'],
-            \ 'info':    ['fg', 'PreProc'],
-            \ 'border':  ['fg', 'Ignore'],
-            \ 'prompt':  ['fg', 'Conditional'],
-            \ 'pointer': ['fg', 'Exception'],
-            \ 'marker':  ['fg', 'Keyword'],
-            \ 'spinner': ['fg', 'Label'],
-            \ 'header':  ['fg', 'Comment'] }
+" Spell replacement for "z=" thanks to Corey Alexander
+" https://dev.to/coreyja/vim-spelling-suggestions-with-fzf-1ccc
+function! FzfSpellSink(word)
+    exe 'normal! "_ciw'.a:word
+endfunction
+function! FzfSpell()
+    let suggestions = spellsuggest(expand("<cword>"))
+    return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
+endfunction
 
+" Fugitive integration for fzf-preview
+nnoremap <silent> ’’ :<C-u>FzfPreviewGitStatus -processors=g:fzf_preview_fugitive_processors<CR>
+
+augroup fzf_preview
+  autocmd!
+  autocmd User fzf_preview#initialized call s:fzf_preview_settings()
+augroup END
+
+function! s:fugitive_add(paths) abort
+  for path in a:paths
+    execute 'silent G add ' . path
+  endfor
+  echomsg 'Git add ' . join(a:paths, ', ')
+endfunction
+
+function! s:fugitive_reset(paths) abort
+  for path in a:paths
+    execute 'silent G reset ' . path
+  endfor
+  echomsg 'Git reset ' . join(a:paths, ', ')
+endfunction
+
+function! s:fugitive_patch(paths) abort
+  for path in a:paths
+    execute 'silent tabedit ' . path . ' | silent Gdiff'
+  endfor
+  echomsg 'Git add --patch ' . join(a:paths, ', ')
+endfunction
+
+function! s:fzf_preview_settings() abort
+  let g:fzf_preview_fugitive_processors = fzf_preview#resource_processor#get_processors()
+  let g:fzf_preview_fugitive_processors['ctrl-a'] = function('s:fugitive_add')
+  let g:fzf_preview_fugitive_processors['ctrl-r'] = function('s:fugitive_reset')
+  let g:fzf_preview_fugitive_processors['ctrl-c'] = function('s:fugitive_patch')
+endfunction
