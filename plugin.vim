@@ -85,6 +85,7 @@ Plug 'dhruvasagar/vim-table-mode'      " Make table easily
 Plug 'editorconfig/editorconfig-vim'   " Read editorconfig file
 Plug 'fboender/bexec'                  " Execute current script
 Plug 'sakhnik/nvim-gdb',               " A debugger that actually works
+Plug 'alfredodeza/pytest.vim'          " Pytest integration
 Plug 'airblade/vim-gitgutter'          " Git gutter on the left
 Plug 'rbgrouleff/bclose.vim'           " Ranger plugin dependency
 Plug 'francoiscabrol/ranger.vim'       " Ranger integration
@@ -101,8 +102,7 @@ Plug 'osyo-manga/vim-over'             " Live matching on command line
 " Python
 Plug 'davidhalter/jedi-vim',         { 'for': 'python' }
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
-Plug 'numirias/semshi',              { 'for': 'python',
-    \ 'do': ':UpdateRemotePlugins'} " semantic syntax
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
 
 " Web
 Plug 'mattn/emmet-vim',        { 'for': ['html','css', 'scss', 'sass', 'vue'] }

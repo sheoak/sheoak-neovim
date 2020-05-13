@@ -143,3 +143,47 @@ map @. @:
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 " to match C and D behavior
 nnoremap Y y$
+
+" pytest
+nnoremap ,tt :Pytest function<CR>
+nnoremap ,tf :Pytest file<CR>
+nnoremap ,tp :Pytest project<CR>
+nnoremap ,ts :Pytest session<CR>
+nnoremap ,tx :Pytest fails<CR>
+nnoremap ,te :Pytest error<CR>
+nnoremap ,td :Pytest file --pdb<CR>
+nnoremap ,tB :Pytest file -s<CR>
+nnoremap ,tb opytest.set_trace()<ESC>
+
+" pdb
+nnoremap ,<cr> :GdbStartPDB python -m pdb app.py<CR>
+function! NvimGdbNoTKeymaps()
+  tnoremap <silent> <buffer> <esc> <c-\><c-n>
+endfunction
+
+let g:nvimgdb_config_override = {
+  \ 'key_next': '<return>',
+  \ 'key_step': '<space>',
+  \ 'key_finish': 'f',
+  \ 'key_quit': 'q',
+  \ 'key_continue': 'c',
+  \ 'key_until': 'u',
+  \ 'key_breakpoint': 'b',
+  \ 'set_tkeymaps': "NvimGdbNoTKeymaps",
+  \ 'key_frameup':    '<c-p>',
+  \ 'key_framedown':  '<c-n>',
+  \ 'key_eval':       'e',
+  \ 'sign_current_line': '▶',
+  \ 'sign_breakpoint': [ '●', '●²', '●³', '●⁴', '●⁵', '●⁶', '●⁷', '●⁸', '●⁹', '●ⁿ' ],
+  \ }
+
+" :autocmd User NvimGdbCleanup echo GdbCustomCommand('frame var')
+:autocmd User NvimGdbQuery call nvim_buf_set_lines(bufnum, 0, -1, 0,
+        \ split(GdbCustomCommand("info locals"), "\n"))
+
+" vim-which-key
+" https://github.com/liuchengxu/vim-which-key
+" let g:mapleader = "\,"
+" let g:maplocalleader = '\\'
+" nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+" nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
