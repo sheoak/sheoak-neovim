@@ -17,18 +17,18 @@ augroup fileDetect
     au BufEnter Makefile    setlocal noexpandtab
 
     " open special files in vim, like annoying docx or rtf…
-    autocmd BufReadPre *.docx silent set ro
+    autocmd BufReadPre *.docx       silent set ro
     " autocmd BufEnter *.docx silent set modifiable
-    autocmd BufReadPost *.docx                  silent %!pandoc --columns=78 "%" -f docx -t markdown "%" -d /dev/stdout
+    autocmd BufReadPost *.docx      silent %!pandoc --columns=78 "%" -f docx -t markdown "%" -d /dev/stdout
     autocmd BufReadPost *.odp,*.odt silent %!pandoc --columns=78 "%" -t markdown -o /dev/stdout
-    autocmd BufReadPre *.doc silent set ro
-    autocmd BufReadPost *.doc silent %!antiword "%"
+    autocmd BufReadPre *.doc        silent set ro
+    autocmd BufReadPost *.doc       silent %!antiword "%"
     " Read-only rtf through unrtf
-    autocmd BufReadPre *.rtf silent set ro
-    autocmd BufReadPost *.rtf silent %!unrtf --text
+    autocmd BufReadPre *.rtf        silent set ro
+    autocmd BufReadPost *.rtf       silent %!unrtf --text
     " Read-only pdf through pdftotext
-    autocmd BufReadPre *.pdf silent set ro
-    autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk -layout -q -eol unix "%" - | fmt -w78
+    autocmd BufReadPre *.pdf        silent set ro
+    autocmd BufReadPost *.pdf       silent %!pdftotext -nopgbrk -layout -q -eol unix "%" - | fmt -w78
 
     " Special settings for passwords files
     au BufEnter /dev/shm/*  setlocal nobackup noswapfile noundofile
@@ -72,8 +72,8 @@ augroup fileTypes
     au FileType mail          setlocal tw=72 fo+=o listchars=tab:\ \
 
     " disable deoplete auto-complete for text files
-    au FileType text,markdown,mail
-            \ call deoplete#custom#buffer_option('auto_complete', v:false)
+    " au FileType text,markdown,mail
+    "         \ call deoplete#custom#buffer_option('auto_complete', v:false)
 augroup END
 
 " Spell configuration
@@ -84,4 +84,3 @@ if has("spell")
         au FileType help setlocal nospell
     augroup END
 end
-

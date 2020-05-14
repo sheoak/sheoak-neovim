@@ -1,6 +1,9 @@
 " ----------------------------------------------------------------------------
 " Goodies for FZF-preview & FZF
 " ----------------------------------------------------------------------------
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noruler
+autocmd  BufLeave *   set laststatus=2 ruler
 
 " ----------------------------------------------------------------------------
 " CONFIGURATION
@@ -18,6 +21,8 @@ let g:fzf_preview_use_dev_icons = 1
 let g:fzf_preview_directory_files_command = 'rg --files --ignore-file $DOTFILES_PRIVATE/agignore --hidden --no-messages -g \!"* *"'
 let g:fzf_preview_filelist_command = 'rg --files --ignore-file $DOTFILES_PRIVATE/agignore --hidden --no-messages -g \!"* *"' " Installed ripgrep
 
+let g:fzf_preview_if_binary_command = '[[ "$(file --mime {})" =~ binary ]]'
+let g:fzf_binary_preview_command = 'echo "{} is a binary file"'
 
 " ----------------------------------------------------------------------------
 " MAPPINGS

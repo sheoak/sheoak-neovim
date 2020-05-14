@@ -13,20 +13,19 @@ let g:python3_host_prog=expand('~/.virtualenvs/neovim3/bin/python')
 let g:user_emmet_install_global = 0
 
 " ALE
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace', 'stylelint'],
-\   'python': ['autopep8', 'yapf'],
-\   'javascript': ['eslint'],
-\   'vue': ['eslint']
-\}
-let g:ale_warn_about_trailing_whitespace = 0
-let g:ale_linters = {
-\   '*': ['eslint']
-\ }
+" let g:ale_fixers = {
+" \   '*': ['remove_trailing_lines', 'trim_whitespace', 'stylelint'],
+" \   'python': ['autopep8', 'yapf'],
+" \   'javascript': ['eslint'],
+" \   'vue': ['eslint']
+" \}
+" let g:ale_warn_about_trailing_whitespace = 0
+" let g:ale_linters = {
+" \   '*': ['eslint']
+" \ }
 
 " vim-rooter
 let g:rooter_patterns = ['Rakefile', '.git/', 'package.json', '.projectroot']
-let g:rooter_silent_chdir = 1
 
 " vim-airline
 set laststatus=2 " Always display the statusline in all windows
@@ -98,14 +97,10 @@ let g:pandoc#biblio#sources = 'b'
 let g:gundo_prefer_python3 = 1
 
 " Deoplete
-let g:deoplete#enable_at_startup = 1
-let g:neosnippet#enable_completed_snippet = 1
-let g:deoplete#omni_patterns = {}
-let g:deoplete#omni_patterns.java = '[^. *\t]\.\w*'
-let g:deoplete#sources = {}
-let g:deoplete#sources._ = []
-let g:deoplete#file#enable_buffer_path = 1
-let g:deoplete#auto_complete_delay = 100
+" let g:deoplete#enable_at_startup = 1
+" let g:neosnippet#enable_completed_snippet = 1
+" let g:deoplete#omni_patterns = {}
+" let g:deoplete#omni_patterns.java = '[^. *\t]\.\w*'
 
 " Goyo
 let g:goyo_height='98%'
@@ -117,15 +112,15 @@ let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
 
 " Neosnippets
 " For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
+" if has('conceal')
+"   set conceallevel=2 concealcursor=niv
+" endif
 
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory='~/.local/share/nvim/plugged/vim-snippets/snippet'
+" let g:neosnippet#enable_snipmate_compatibility = 1
+" let g:neosnippet#snippets_directory='~/.local/share/nvim/plugged/vim-snippets/snippet'
 
-let g:neosnippet#scope_aliases = {}
-let g:neosnippet#scope_aliases['python'] = 'python,django'
+" let g:neosnippet#scope_aliases = {}
+" let g:neosnippet#scope_aliases['python'] = 'python,django'
 
 " Gutentag
 let g:gutentags_ctags_tagfile=".ctags"
@@ -183,7 +178,7 @@ let g:grammarous#default_comments_only_filetypes = {
 let g:grammarous#use_vim_spelllang = 1
 
 " Devicons
-let g:webdevicons_enable_denite = 1
+" let g:webdevicons_enable_denite = 1
 let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
 
@@ -197,29 +192,14 @@ let g:sneak#label = 0
 let g:bookmark_auto_save_file = $DOTFILES_PRIVATE . '/nvim/vim-bookmarks'
 let g:startify_custom_header = []
 
-" " vim-multiple-cursors
-" let g:multi_cursor_start_word_key      = '<C-h>'
-" let g:multi_cursor_select_all_word_key = '<A-n>'
-" let g:multi_cursor_start_key           = 'g<C-h>'
-" let g:multi_cursor_select_all_key      = 'g<A-h>'
-" let g:multi_cursor_next_key            = '<C-h>'
-" let g:multi_cursor_prev_key            = '<C-p>'
-" let g:multi_cursor_skip_key            = '<C-x>'
-" let g:multi_cursor_quit_key            = '<Esc>'
-
 " Ternjs
-let g:deoplete#sources#ternjs#filetypes = ['jsx', 'vue']
+" let g:deoplete#sources#ternjs#filetypes = ['jsx', 'vue']
 
 " vim-unimpaired-extras
-if (executable('ag'))
-    let g:unimpaired_extra_denite_cmd_hidden = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
-    let g:unimpaired_extra_denite_cmd = ['ag', '--follow', '--nocolor', '--nogroup', '-g', '']
-endif
-
-" FZF
-autocmd! FileType fzf
-autocmd  FileType fzf set laststatus=0 noruler
-autocmd  BufLeave *   set laststatus=2 ruler
+" if (executable('ag'))
+"     let g:unimpaired_extra_denite_cmd_hidden = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
+"     let g:unimpaired_extra_denite_cmd = ['ag', '--follow', '--nocolor', '--nogroup', '-g', '']
+" endif
 
 " Ansible
 let g:ansible_unindent_after_newline = 1
@@ -240,5 +220,9 @@ let g:prettier#exec_cmd_async = 1
 let g:prettier#quickfix_enabled = 0
 let g:prettier#quickfix_auto_focus = 0
 let g:prettier#autoformat = 0
-"let g:prettier#config#semi = 'false'
 let g:prettier#config#config_precedence = 'file-override'
+"let g:prettier#config#semi = 'false'
+
+" coc
+let g:coc_node_path = "/usr/bin/node"
+

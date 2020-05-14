@@ -47,18 +47,17 @@ nmap , <Nop>
 " -----------------------------------------------------------------------------
 
 " Neosnippets
-imap <C-space> <Plug>(neosnippet_expand_or_jump)
-smap <C-space> <Plug>(neosnippet_expand_or_jump)
-xmap <C-space> <Plug>(neosnippet_expand_target)
+" imap <C-space> <Plug>(neosnippet_expand_or_jump)
+" smap <C-space> <Plug>(neosnippet_expand_or_jump)
+" xmap <C-space> <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
-imap <expr><TAB>
- \ pumvisible() ? "\<C-n>" :
- \ neosnippet#expandable_or_jumpable() ?
- \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" imap <expr><TAB>
+"  \ pumvisible() ? "\<C-n>" :
+"  \ neosnippet#expandable_or_jumpable() ?
+"  \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 "  Formatting
 " -----------------------------------------------------------------------------
@@ -92,8 +91,8 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
             \ | wincmd p | diffthis
 
 " ALE
-nmap <leader>ad <Plug>(ale_detail)
-nmap <leader>af <Plug>(ale_fix)
+" nmap <leader>ad <Plug>(ale_detail)
+" nmap <leader>af <Plug>(ale_fix)
 " css colors insert/convert via plugins
 nmap <leader>cA :ConvertColorTo rgba<CR>
 nmap <leader>ca :VCoolIns ra<CR>
@@ -104,7 +103,7 @@ nmap <leader>cr :VCoolIns r<CR>
 nnoremap <leader>do :DiffOrig<CR>
 " Order all css properties
 nnoremap <leader>cs :<C-u>g/{/ .+1,/}/-1 sort<CR>
-nmap <leader>f :Prettier<CR>
+" nmap <leader>f :Prettier<CR>
 nmap <leader>m :make<CR>
 nmap <leader>pc :PlugClean<CR>
 nmap <leader>pd :PlugDiff<CR>
@@ -176,10 +175,6 @@ let g:nvimgdb_config_override = {
   \ 'sign_current_line': '▶',
   \ 'sign_breakpoint': [ '●', '●²', '●³', '●⁴', '●⁵', '●⁶', '●⁷', '●⁸', '●⁹', '●ⁿ' ],
   \ }
-
-" :autocmd User NvimGdbCleanup echo GdbCustomCommand('frame var')
-:autocmd User NvimGdbQuery call nvim_buf_set_lines(bufnum, 0, -1, 0,
-        \ split(GdbCustomCommand("info locals"), "\n"))
 
 " vim-which-key
 " https://github.com/liuchengxu/vim-which-key

@@ -19,6 +19,21 @@ set backupdir=$HOME/.local/share/nvim/backups,$HOME/.backups/,/tmp/
 set directory=$HOME/.local/share/nvim/swap//,$HOME/.backups//,/tmp//
 set backupskip=/tmp/*,$HOME/backups/*,*.tmp/*,*.cache/*
 
+" coc settings
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=yes
+
 " Persistent Undo
 " Keep undo history across sessions, by storing in file.
 if has('persistent_undo')
@@ -48,3 +63,7 @@ catch
     colorscheme desert
 endtry
 
+" neovim-remote
+if has('nvim')
+    let $GIT_EDITOR = 'nvr -cc split --remote-wait'
+endif
