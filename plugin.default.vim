@@ -226,3 +226,22 @@ let g:prettier#config#config_precedence = 'file-override'
 " coc
 let g:coc_node_path = "/usr/bin/node"
 
+" nvim-gdb
+let g:nvimgdb_config_override = {
+  \ 'key_next': '<return>',
+  \ 'key_step': '<space>',
+  \ 'key_finish': 'f',
+  \ 'key_quit': 'q',
+  \ 'key_continue': 'c',
+  \ 'key_until': 'u',
+  \ 'key_breakpoint': 'b',
+  \ 'set_tkeymaps': "NvimGdbNoTKeymaps",
+  \ 'key_frameup':    '<c-p>',
+  \ 'key_framedown':  '<c-n>',
+  \ 'key_eval':       'e',
+  \ 'sign_current_line': '▶',
+  \ 'sign_breakpoint': [ '●', '●²', '●³', '●⁴', '●⁵', '●⁶', '●⁷', '●⁸', '●⁹', '●ⁿ' ],
+  \ }
+function! NvimGdbNoTKeymaps()
+  tnoremap <silent> <buffer> <esc> <c-\><c-n>
+endfunction

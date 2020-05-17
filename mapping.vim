@@ -155,26 +155,7 @@ nnoremap ,tB :Pytest file -s<CR>
 nnoremap ,tb opytest.set_trace()<ESC>
 
 " pdb
-nnoremap ,<cr> :GdbStartPDB python -m pdb app.py<CR>
-function! NvimGdbNoTKeymaps()
-  tnoremap <silent> <buffer> <esc> <c-\><c-n>
-endfunction
-
-let g:nvimgdb_config_override = {
-  \ 'key_next': '<return>',
-  \ 'key_step': '<space>',
-  \ 'key_finish': 'f',
-  \ 'key_quit': 'q',
-  \ 'key_continue': 'c',
-  \ 'key_until': 'u',
-  \ 'key_breakpoint': 'b',
-  \ 'set_tkeymaps': "NvimGdbNoTKeymaps",
-  \ 'key_frameup':    '<c-p>',
-  \ 'key_framedown':  '<c-n>',
-  \ 'key_eval':       'e',
-  \ 'sign_current_line': '▶',
-  \ 'sign_breakpoint': [ '●', '●²', '●³', '●⁴', '●⁵', '●⁶', '●⁷', '●⁸', '●⁹', '●ⁿ' ],
-  \ }
+nnoremap ,g :GdbStartPDB python -m pdb app.py<CR>
 
 " vim-which-key
 " https://github.com/liuchengxu/vim-which-key
