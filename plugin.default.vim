@@ -191,6 +191,20 @@ let g:sneak#label = 0
 " Startify
 let g:bookmark_auto_save_file = $DOTFILES_PRIVATE . '/nvim/vim-bookmarks'
 let g:startify_custom_header = []
+let g:startify_files_number = 7
+let g:startify_change_to_dir = 1
+let g:startify_change_to_vcs_root = 1
+let g:startify_custom_indices = ['a' , 'u', 'c', 's', 'r', 'm',
+    \ 'o', 'd', 'l', 'j', 'x', 'g', 'h'
+\ ]
+
+let g:startify_lists = [
+      \ { 'type': 'sessions', 'header': ['   Sessions'], 'indices':
+          \ ['b', 'p', 'f', 'n', 'v', 'z'] },
+      \ { 'type': 'files',     'header': ['   MRU']            },
+      \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      }
+\ ]
 
 " Ternjs
 " let g:deoplete#sources#ternjs#filetypes = ['jsx', 'vue']

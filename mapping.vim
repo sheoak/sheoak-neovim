@@ -163,3 +163,15 @@ nnoremap ,g :GdbStartPDB python -m pdb app.py<CR>
 " let g:maplocalleader = '\\'
 " nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 " nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+nnoremap ,<CR> :term<CR>
+
+" startify
+nnoremap ;; :Startify<CR>
+nnoremap ,p <Nop>
+nnoremap ,ps :SSave<CR>
+nnoremap ,pc :SClose<CR>
+nnoremap ,pd :SDelete<CR>
+nnoremap ,pl :SLoad<CR>
+
+" startify example:
+" nnoremap ,pb :SLoad mysession<CR>
