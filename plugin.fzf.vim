@@ -11,6 +11,7 @@ autocmd  BufLeave *   set laststatus=2 ruler
 " fzf
 " Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
+let g:fzf_preview_buffers_jump = 1
 " floating windows from preview also for FZF!
 let g:fzf_layout = { 'window': 'call fzf_preview#window#create_centered_floating_window()' }
 
@@ -21,6 +22,7 @@ let g:fzf_preview_use_dev_icons = 1
 let g:fzf_preview_directory_files_command = 'rg --files --ignore-file $DOTFILES_PRIVATE/agignore --hidden --no-messages -g \!"* *"'
 let g:fzf_preview_filelist_command = 'rg --files --ignore-file $DOTFILES_PRIVATE/agignore --hidden --no-messages -g \!"* *"' " Installed ripgrep
 
+let g:fzf_preview_fzf_preview_window_option = 'right:45%'
 let g:fzf_preview_if_binary_command = '[[ "$(file --mime {})" =~ binary ]]'
 let g:fzf_binary_preview_command = 'echo "{} is a binary file"'
 
@@ -51,6 +53,8 @@ command! -bang -nargs=* Rg
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
+
+
 " ----------------------------------------------------------------------------
 " ADDONS
 " ----------------------------------------------------------------------------
@@ -66,7 +70,7 @@ function! FzfSpell()
 endfunction
 
 " Fugitive integration for fzf-preview
-nnoremap <silent> ’’ :<C-u>FzfPreviewGitStatus -processors=g:fzf_preview_fugitive_processors<CR>
+nnoremap <silent> ’<space> :<C-u>FzfPreviewGitStatus -processors=g:fzf_preview_fugitive_processors<CR>
 
 augroup fzf_preview
   autocmd!

@@ -12,73 +12,8 @@ let g:python3_host_prog=expand('~/.virtualenvs/neovim3/bin/python')
 " Emmet
 let g:user_emmet_install_global = 0
 
-" ALE
-" let g:ale_fixers = {
-" \   '*': ['remove_trailing_lines', 'trim_whitespace', 'stylelint'],
-" \   'python': ['autopep8', 'yapf'],
-" \   'javascript': ['eslint'],
-" \   'vue': ['eslint']
-" \}
-" let g:ale_warn_about_trailing_whitespace = 0
-" let g:ale_linters = {
-" \   '*': ['eslint']
-" \ }
-
 " vim-rooter
 let g:rooter_patterns = ['Rakefile', '.git/', 'package.json', '.projectroot']
-
-" vim-airline
-set laststatus=2 " Always display the statusline in all windows
-set noshowmode   " Remove the duplicated mode label
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#fnamemod = ':t' " just show filename
-let g:airline#extensions#tabline#fnamecollapse = 0
-" syntax not 100% correct, but faster, refresh with :AirlineRefresh :
-let g:airline_highlighting_cache = 1
-" do not show default correct utf-8 unix status
-let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-
-" solarized-airline
-let g:airline_solarized_dark_text = 1
-let g:airline_solarized_dark_inactive_border = 1
-
-if $TERM == 'linux'
-  " tty
-  let g:airline_solarized_normal_green = 1
-  let g:solarized_base16 = 1
-else
-  " non-tty, add nerd font icons
-  let g:airline#extensions#obsession#indicator_text = ''
-  let g:airline_mode_map = {
-        \ '__' : '-',
-        \ 'c'  : ' command',
-        \ 'i'  : ' insert',
-        \ 'ic' : ' insert',
-        \ 'ix' : ' insert',
-        \ 'n'  : ' normal',
-        \ 'ni' : ' normal',
-        \ 'no' : ' normal',
-        \ 'R'  : '﯒ replace',
-        \ 'Rv' : '﯒ replace',
-        \ 's'  : ' select',
-        \ 'S'  : ' select',
-        \ '' : ' select',
-        \ 't'  : ' terminal',
-        \ 'v'  : ' visual',
-        \ 'V'  : ' visual Line',
-        \ '' : ' visual Block',
-  \ }
-
-  if !exists('g:airline_symbols')
-      let g:airline_symbols = {}
-  endif
-
-  let g:airline_symbols.readonly = ""
-  let g:airline_symbols.spell = '暈'
-  let g:airline_symbols.paste = ''
-endif
 
 " theme gruvbox
 " let g:gruvbox_contrast_light = 'light'
@@ -96,12 +31,6 @@ let g:pandoc#biblio#sources = 'b'
 " Gundo
 let g:gundo_prefer_python3 = 1
 
-" Deoplete
-" let g:deoplete#enable_at_startup = 1
-" let g:neosnippet#enable_completed_snippet = 1
-" let g:deoplete#omni_patterns = {}
-" let g:deoplete#omni_patterns.java = '[^. *\t]\.\w*'
-
 " Goyo
 let g:goyo_height='98%'
 let g:goyo_width=80
@@ -109,18 +38,6 @@ let g:goyo_linenr=1
 
 " Ranger
 let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
-
-" Neosnippets
-" For conceal markers.
-" if has('conceal')
-"   set conceallevel=2 concealcursor=niv
-" endif
-
-" let g:neosnippet#enable_snipmate_compatibility = 1
-" let g:neosnippet#snippets_directory='~/.local/share/nvim/plugged/vim-snippets/snippet'
-
-" let g:neosnippet#scope_aliases = {}
-" let g:neosnippet#scope_aliases['python'] = 'python,django'
 
 " Gutentag
 let g:gutentags_ctags_tagfile=".ctags"
@@ -168,7 +85,6 @@ let g:gutentags_ctags_exclude = [
 let g:mkdp_browser = 'firefox'
 
 " Git-gutter
-set updatetime=100
 let g:gitgutter_override_sign_column_highlight = 0
 
 " Grammarous
@@ -225,9 +141,11 @@ let g:virtualenv_directory = "$HOME/.virtualenvs"
 " vCoolor.vim
 let g:vcoolor_disable_mappings = 1
 
-" thesaurus_query
+" thesaurus
 " undocumented option to remove mappings
 let g:tq_map_keys = 0
+let g:tq_language=['en', 'fr']
+" let b:tq_language=['fr']
 
 " prettier
 let g:prettier#exec_cmd_async = 1
@@ -239,6 +157,21 @@ let g:prettier#config#config_precedence = 'file-override'
 
 " coc
 let g:coc_node_path = "/usr/bin/node"
+
+" vim-emoji
+" https://www.webfx.com/tools/emoji-cheat-sheet/
+" set completefunc=emoji#complete
+let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
+let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
+let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
+let g:gitgutter_sign_modified_removed = '≠'
+
+" peekaboo
+let g:peekaboo_window = "vert bo 40new"
+
+" git-messenger
+let g:git_messenger_always_into_popup = 1
+let g:git_messenger_no_default_mappings = 1
 
 " nvim-gdb
 let g:nvimgdb_config_override = {

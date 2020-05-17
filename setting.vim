@@ -40,6 +40,12 @@ if has('persistent_undo')
     set undodir=$HOME/.local/share/nvim/undo//,$HOME/.backups/undo//,/tmp/undo//
 endif
 
+" jump to buffer instead of using current window, when using :sbuffer
+set switchbuf=useopen,usetab,vsplit
+
+" leave this for git gutter
+set updatetime=100
+
 " ----------------------------------------------------------------------------
 " Theme
 " ----------------------------------------------------------------------------
@@ -53,11 +59,11 @@ endif
 
 try
     " neosolarized
-    let g:neosolarized_bold = 1
-    let g:neosolarized_underline = 1
-    let g:neosolarized_italic = 1
-    let g:neosolarized_termtrans = 1
-    "colorscheme NeoSolarized
+    " let g:neosolarized_bold = 1
+    " let g:neosolarized_underline = 1
+    " let g:neosolarized_italic = 1
+    " let g:neosolarized_termtrans = 1
+    " colorscheme NeoSolarized
     colorscheme OceanicNext
 catch
     colorscheme desert

@@ -1,0 +1,33 @@
+{
+  "diagnostic.errorSign": "×",
+  "diagnostic.warningSign": "·",
+  "diagnostic.infoSign": "",
+  "diagnostic-languageserver.filetypes": {
+    "sh": "shellcheck"
+  },
+  "eslint.enable": true,
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "git.realtimeGutters": true,
+  "suggest.noselect": true,
+  "list.insertMappings": {
+    "<C-x>": "action:split",
+    "<C-v>": "action:vsplit"
+  },
+  "list.normalMappings": {
+    "s": "action:split",
+    "v": "action:vsplit"
+  },
+  "list.source.files.command": "fd",
+  "list.source.files.args": ["--type", "f"],
+  "tsserver.enableJavascript": true,
+  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "typescript.preferences.quoteStyle": "double",
+  "typescript.referencesCodeLens.enable": false,
+  "git.enableGutters": true
+}

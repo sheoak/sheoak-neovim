@@ -40,6 +40,25 @@ let g:jedi#completions_enabled = 0
 nmap , <Nop>
 
 " -----------------------------------------------------------------------------
+" Common actions (no plugin)
+" -----------------------------------------------------------------------------
+nmap ,s :w<CR>
+nmap ,S :w!<CR>
+nmap ,w :saveas<space>
+nmap ,W :saveas!<space>
+nmap ,q :q<CR>
+nmap ,Q :qa<CR>
+nmap ,x :x<CR>
+nmap ,X :x!<CR>
+nmap ,u :bunload<CR>
+nmap ,U :bunload!<CR>
+nmap ,d :bdelete<CR>
+nmap ,D :bdelete!<CR>
+nmap ,iv :source ~/.config/nvim/init.vim<CR>
+nmap ,is :source %<CR>
+
+
+" -----------------------------------------------------------------------------
 " Plugins
 " -----------------------------------------------------------------------------
 
@@ -128,6 +147,11 @@ nnoremap <leader>  :%s/\(\S\) \([:;?!]\)/\1 \2/g<CR>
 
 " Misc.
 " -----------------------------------------------------------------------------
+
+" ranger
+nnoremap ,e :RangerWorkingDirectory<CR>
+nnoremap ,E :Ranger ~<CR>
+
 
 " vim-bookmarks
 nnoremap ms <Plug>BookmarkShowAll
