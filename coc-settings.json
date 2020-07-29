@@ -1,7 +1,11 @@
 {
-  "diagnostic.errorSign": "×",
-  "diagnostic.warningSign": "·",
+  "python.jediEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true,
+  "python.venvFolders": [".virtualenvs"],
   "diagnostic.infoSign": "",
+  "diagnostic.errorSign": "×",
+  "diagnostic.warningSign": "⚠",
   "diagnostic-languageserver.filetypes": {
     "sh": "shellcheck"
   },
