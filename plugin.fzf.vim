@@ -15,9 +15,10 @@ let g:fzf_preview_buffers_jump = 1
 " floating windows from preview also for FZF!
 let g:fzf_layout = { 'window': 'call fzf_preview#window#create_centered_floating_window()' }
 
+
 " fzf-preview
 " see plugin/fzf-addons.vim for custom methods
-let g:fzf_preview_use_dev_icons = 1
+" let g:fzf_preview_use_dev_icons = 1
 " Commands used to get the file list from current directory
 let g:fzf_preview_directory_files_command = 'rg --files --ignore-file $DOTFILES_PRIVATE/agignore --hidden --no-messages -g \!"* *"'
 let g:fzf_preview_filelist_command = 'rg --files --ignore-file $DOTFILES_PRIVATE/agignore --hidden --no-messages -g \!"* *"' " Installed ripgrep
@@ -52,7 +53,6 @@ command! -bang -nargs=* Rg
 " Likewise, Files command with preview window
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
 
 
 " ----------------------------------------------------------------------------
