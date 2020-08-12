@@ -20,7 +20,7 @@ let g:fzf_layout = { 'window': 'call fzf_preview#window#create_centered_floating
 " see plugin/fzf-addons.vim for custom methods
 " let g:fzf_preview_use_dev_icons = 1
 " Commands used to get the file list from current directory
-let g:fzf_preview_directory_files_command = 'rg --files --ignore-file $DOTFILES_PRIVATE/agignore --hidden --no-messages -g \!"* *"'
+let g:fzf_preview_directory_files_command = 'rg --no-ignore-vcs --files --ignore-file $DOTFILES_PRIVATE/agignore --hidden --no-messages -g \!"* *"'
 let g:fzf_preview_filelist_command = 'rg --files --ignore-file $DOTFILES_PRIVATE/agignore --hidden --no-messages -g \!"* *"' " Installed ripgrep
 
 let g:fzf_preview_fzf_preview_window_option = 'right:45%'
