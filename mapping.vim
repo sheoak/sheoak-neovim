@@ -15,6 +15,7 @@ noremap <BS> <PageUp>
 noremap <Space> <PageDown>
 " terminal escape instead of C-\ C-n
 tnoremap <C-g> <C-\><C-n>
+tnoremap <C-d> <C-\><C-n>:bd!<CR>
 
 " ----------------------------------------------------------------------------
 " Plugin pre-configuration for bepoptimist
