@@ -95,18 +95,16 @@ Plug 'MattesGroeger/vim-bookmarks'     " Annotations
 " Filetype specific plugins
 " ----------------------------------------------------------------------------
 " Python
-Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
 
 " Web
-Plug 'mattn/emmet-vim',        { 'for': ['html','css', 'scss', 'sass', 'vue'] }
 Plug 'alvan/vim-closetag',     { 'for': ['html','css', 'scss', 'sass'] }
 Plug 'tmhedberg/matchit',      { 'for': ['html', 'xml'] }
 Plug 'digitaltoad/vim-pug',    { 'for': ['vue', 'pug'] }
 Plug 'posva/vim-vue',          { 'for': ['js', 'vue'] }
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'KabbAmine/vCoolor.vim'   " color picker
 Plug 'amadeus/vim-convert-color-to'
+Plug 'mattn/emmet-vim'
 
 " Javascript
 Plug 'jelera/vim-javascript-syntax', { 'for': 'js' }
@@ -139,12 +137,6 @@ Plug 'ryanoasis/vim-devicons'          " icons, must be loaded after the rest
 " ----------------------------------------------------------------------------
 " Disabled plugins
 " ----------------------------------------------------------------------------
-" Plug 'liuchengxu/vim-which-key'        " Show mapping live
-" Plug 'wokalski/autocomplete-flow', { 'for': 'js' }
-" Plug 'sheoak/vim-snippets'             " Snippets for different languages
-" Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-" Plug 'mhinz/neovim-remote'
-" Plug 'davidhalter/jedi-vim',         { 'for': 'python' }
-" Plug 'ap/vim-css-color'
-" Plug 'tobyS/pdv' ,                       { 'for': 'php' }
-" Plug 'noahfrederick/vim-composer'
+" Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
+" Plug 'mattn/emmet-vim',        { 'for': ['html','css', 'scss', 'sass', 'vue'] }
+" Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
