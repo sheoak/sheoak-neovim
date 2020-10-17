@@ -12,20 +12,22 @@ autocmd  BufLeave *   set laststatus=2 ruler
 " Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
 let g:fzf_preview_buffers_jump = 1
-" floating windows from preview also for FZF!
-let g:fzf_layout = { 'window': 'call fzf_preview#window#create_centered_floating_window()' }
+" floating windows from preview also for FZF! (doesn't work anymore)
+" let g:fzf_layout = { 'window': 'call fzf_preview#window#create_centered_floating_window()' }
 
+let g:fzf_preview_default_fzf_options = { '--reverse': v:true, '--preview-window': 'wrap' }
+let g:fzf_preview_command = 'bat --color=always --plain {-1}'
+let g:fzf_binary_preview_command = 'echo "{} is a binary file"'
 
 " fzf-preview
 " see plugin/fzf-addons.vim for custom methods
-" let g:fzf_preview_use_dev_icons = 1
+let g:fzf_preview_use_dev_icons = 1
 " Commands used to get the file list from current directory
 let g:fzf_preview_directory_files_command = 'rg --no-ignore-vcs --files --ignore-file $DOTFILES_PRIVATE/agignore --hidden --no-messages -g \!"* *"'
 let g:fzf_preview_filelist_command = 'rg --files --ignore-file $DOTFILES_PRIVATE/agignore --hidden --no-messages -g \!"* *"' " Installed ripgrep
 
 let g:fzf_preview_fzf_preview_window_option = 'right:45%'
 let g:fzf_preview_if_binary_command = '[[ "$(file --mime {})" =~ binary ]]'
-let g:fzf_binary_preview_command = 'echo "{} is a binary file"'
 
 " ----------------------------------------------------------------------------
 " MAPPINGS
@@ -72,10 +74,10 @@ endfunction
 " Fugitive integration for fzf-preview
 nnoremap <silent> ’<space> :<C-u>FzfPreviewGitStatus -processors=g:fzf_preview_fugitive_processors<CR>
 
-augroup fzf_preview
-  autocmd!
-  autocmd User fzf_preview#initialized call s:fzf_preview_settings()
-augroup END
+" augroup fzf_preview
+"   autocmd!
+"   autocmd User fzf_preview#initialized call s:fzf_preview_settings()
+" augroup END
 
 function! s:fugitive_add(paths) abort
   for path in a:paths
@@ -98,9 +100,9 @@ function! s:fugitive_patch(paths) abort
   echomsg 'Git add --patch ' . join(a:paths, ', ')
 endfunction
 
-function! s:fzf_preview_settings() abort
-  let g:fzf_preview_fugitive_processors = fzf_preview#resource_processor#get_processors()
-  let g:fzf_preview_fugitive_processors['ctrl-a'] = function('s:fugitive_add')
-  let g:fzf_preview_fugitive_processors['ctrl-r'] = function('s:fugitive_reset')
-  let g:fzf_preview_fugitive_processors['ctrl-c'] = function('s:fugitive_patch')
-endfunction
+" function! s:fzf_preview_settings() abort
+"   let g:fzf_preview_fugitive_processors = fzf_preview#resource_processor#get_processors()
+"   let g:fzf_preview_fugitive_processors['ctrl-a'] = function('s:fugitive_add')
+"   let g:fzf_preview_fugitive_processors['ctrl-r'] = function('s:fugitive_reset')
+"   let g:fzf_preview_fugitive_processors['ctrl-c'] = function('s:fugitive_patch')
+" endfunction

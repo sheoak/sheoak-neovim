@@ -78,7 +78,6 @@ Plug 'aperezdc/vim-template'           " Auto-template when opening new file
 " ----------------------------------------------------------------------------
 Plug 'mhinz/vim-startify'              " Startup screen
 Plug 'junegunn/fzf.vim'                " fuzzy find wrapper
-Plug 'yuki-ycino/fzf-preview.vim'      " fzf with preview
 Plug 'ludovicchabant/vim-gutentags'    " Ctags generation
 Plug 'airblade/vim-rooter'             " Auto cd to project dir
 Plug 'diepm/vim-rest-console'          " Call REST API from vim
