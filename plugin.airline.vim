@@ -34,22 +34,22 @@ else
   let g:airline#extensions#obsession#indicator_text = ''
   let g:airline_mode_map = {
         \ '__' : '-',
-        \ 'c'  : ' command',
-        \ 'i'  : ' insert',
-        \ 'ic' : ' insert',
-        \ 'ix' : ' insert',
-        \ 'n'  : ' normal',
-        \ 'ni' : ' normal',
-        \ 'no' : ' normal',
-        \ 'R'  : '﯒ replace',
-        \ 'Rv' : '﯒ replace',
-        \ 's'  : ' select',
-        \ 'S'  : ' select',
-        \ '' : ' select',
+        \ 'c'  : '',
+        \ 'i'  : '',
+        \ 'ic' : '',
+        \ 'ix' : '',
+        \ 'n'  : '',
+        \ 'ni' : '',
+        \ 'no' : '',
+        \ 'R'  : '﯒',
+        \ 'Rv' : '﯒',
+        \ 's'  : '',
+        \ 'S'  : '',
+        \ '' : '',
         \ 't'  : ' terminal',
-        \ 'v'  : ' visual',
-        \ 'V'  : ' visual Line',
-        \ '' : ' visual Block',
+        \ 'v'  : '',
+        \ 'V'  : '',
+        \ '' : '',
   \ }
 
   if !exists('g:airline_symbols')
@@ -59,4 +59,7 @@ else
   let g:airline_symbols.readonly = ""
   let g:airline_symbols.spell = '暈'
   let g:airline_symbols.paste = ''
+  let g:airline_symbols.dirty=' '
 endif
+
+let g:airline#extensions#branch#vcs_checks = ['untracked', 'dirty']
