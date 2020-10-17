@@ -7,6 +7,7 @@
 " ----------------------------------------------------------------------------
 Plug 'chrisbra/csv.vim'
 Plug 'SidOfc/mkdx'                     " Markdown goodies
+Plug 'sheoak/vim-snippets'             " Snippets for different languages
 
 " ----------------------------------------------------------------------------
 " My custom plugins
@@ -133,10 +134,3 @@ Plug 'vim-airline/vim-airline'         " Cool status bar
 Plug 'vim-airline/vim-airline-themes'  " Airline themes
 " After - plugins that must be loaded last
 Plug 'ryanoasis/vim-devicons'          " icons, must be loaded after the rest
-
-" ----------------------------------------------------------------------------
-" Disabled plugins
-" ----------------------------------------------------------------------------
-" Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
-" Plug 'mattn/emmet-vim',        { 'for': ['html','css', 'scss', 'sass', 'vue'] }
-" Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
