@@ -188,7 +188,7 @@ nnoremap ,g :GdbStartPDB python -m pdb app.py<CR>
 " let g:maplocalleader = '\\'
 " nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 " nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
-nnoremap ,<CR> :term<CR>
+nnoremap ,<CR> :term<CR>i
 
 " startify
 nnoremap ;; :Startify<CR>

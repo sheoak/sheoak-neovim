@@ -1,6 +1,8 @@
+" ----------------------------------------------------------------------------
 " vim-airline settings
+" see also after/plugin/airline.vim
+" ----------------------------------------------------------------------------
 set laststatus=2 " Always display the statusline in all windows
-set noshowmode   " Remove the duplicated mode label
 
 " vars
 let g:airline#extensions#tabline#enabled = 1
