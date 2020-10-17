@@ -19,6 +19,7 @@ Plug 'sheoak/vim-unimpaired-extras'    " Additionnal vim-unimpaired mappings
 " Git plugins
 " ----------------------------------------------------------------------------
 Plug 'tpope/vim-fugitive'              " Git integration
+Plug 'junkblocker/git-time-lapse'      " Git history
 Plug 'rhysd/git-messenger.vim'
 Plug 'airblade/vim-gitgutter'          " Git gutter on the left
 

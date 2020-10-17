@@ -201,5 +201,9 @@ let g:nvimgdb_config_override = {
 function! NvimGdbNoTKeymaps()
   tnoremap <silent> <buffer> <esc> <c-\><c-n>
 endfunction
+
+" git-timelapse
+nmap ’<BS> :GitTimeLapse<CR>
+
 " semshi conflicts with coc:
 let g:semshi#error_sign = v:false
