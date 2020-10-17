@@ -74,11 +74,6 @@ endfunction
 " Fugitive integration for fzf-preview
 nnoremap <silent> ’<space> :<C-u>FzfPreviewGitStatus -processors=g:fzf_preview_fugitive_processors<CR>
 
-" augroup fzf_preview
-"   autocmd!
-"   autocmd User fzf_preview#initialized call s:fzf_preview_settings()
-" augroup END
-
 function! s:fugitive_add(paths) abort
   for path in a:paths
     execute 'silent G add ' . path
@@ -99,10 +94,3 @@ function! s:fugitive_patch(paths) abort
   endfor
   echomsg 'Git add --patch ' . join(a:paths, ', ')
 endfunction
-
-" function! s:fzf_preview_settings() abort
-"   let g:fzf_preview_fugitive_processors = fzf_preview#resource_processor#get_processors()
-"   let g:fzf_preview_fugitive_processors['ctrl-a'] = function('s:fugitive_add')
-"   let g:fzf_preview_fugitive_processors['ctrl-r'] = function('s:fugitive_reset')
-"   let g:fzf_preview_fugitive_processors['ctrl-c'] = function('s:fugitive_patch')
-" endfunction
