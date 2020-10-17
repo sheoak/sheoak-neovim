@@ -48,32 +48,24 @@ augroup END
 " File type settings {{{
 augroup fileTypes
     au!
-
     " Tab settings
     au FileType sass,pug,html,yaml setlocal sts=2 sw=2 ts=2
-
-    " HTML/CSS mapping
-    au FileType html,css,scss,sass EmmetInstall
-    au FileType html,css,sass,less
-        \ imap <buffer> <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-
-    au FileType vue setlocal commentstring=//\ %s
-
     " omnifunc by types
     au FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
     au FileType xml           setlocal omnifunc=xmlcomplete#CompleteTags
     au FileType java          setlocal omnifunc=javacomplete#Complete
     au FileType javascript    setlocal formatprg=prettier\ --stdin
-
     " formating by types
     au FileType text          setlocal tw=78 fo+=t cole=0
     au FileType markdown      setlocal tw=80 fo+=t cole=0
     au FileType gitcommit     setlocal tw=72 fo+=t cc=72
     au FileType mail          setlocal tw=72 fo+=o listchars=tab:\ \
-
-    " disable deoplete auto-complete for text files
-    " au FileType text,markdown,mail
-    "         \ call deoplete#custom#buffer_option('auto_complete', v:false)
+    " Comments for vue
+    au FileType vue setlocal commentstring=//\ %s
+    " Emmet
+    au FileType html,css EmmetInstall
+    au FileType html,css,sass,less
+        \ imap <buffer> <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 augroup END
 
 " Spell configuration
