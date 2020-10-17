@@ -1,13 +1,7 @@
 {
-  "python.jediEnabled": false,
-  "python.linting.flake8Enabled": true,
-  "python.linting.enabled": true,
-  "python.analysis.diagnosticEnabled": true,
-  "python.formatting.provider": "autopep8",
-  "python.venvFolders": [".virtualenvs"],
   "diagnostic.checkCurrentLine": true,
-  "diagnostic.infoSign": "",
   "diagnostic.errorSign": "×",
+  "diagnostic.infoSign": "",
   "diagnostic.warningSign": "×",
   "diagnostic-languageserver.filetypes": {
     "sh": "shellcheck"
@@ -19,7 +13,8 @@
     "typescript",
     "typescriptreact"
   ],
-  "suggest.noselect": true,
+  "git.realtimeGutters": true,
+  "git.enableGutters": true,
   "list.insertMappings": {
     "<C-x>": "action:split",
     "<C-v>": "action:vsplit"
@@ -30,11 +25,16 @@
   },
   "list.source.files.command": "fd",
   "list.source.files.args": ["--type", "f"],
+  "python.jediEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true,
+  "python.analysis.diagnosticEnabled": true,
+  "python.formatting.provider": "autopep8",
+  "python.venvFolders": [".virtualenvs"],
+  "suggest.noselect": true,
   "tsserver.enableJavascript": true,
   "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.preferences.quoteStyle": "double",
-  "typescript.referencesCodeLens.enable": false,
-  "git.realtimeGutters": true,
-  "git.enableGutters": true
+  "typescript.referencesCodeLens.enable": false
 }
