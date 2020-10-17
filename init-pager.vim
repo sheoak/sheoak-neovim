@@ -1,7 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nvimpager main configuration file
 "
-" Maintainer: sheoak <contact [at] sheoak.fr>
+" Maintainer: sheoak <contact [at] lightn.es>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 exe "set runtimepath+=" . expand($HOME . "/.local/share/nvim/site/")
 

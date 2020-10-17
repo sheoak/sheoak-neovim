@@ -6,7 +6,7 @@
 "
 " :PlugInstall
 "
-" Maintainer: sheoak <contact [at] sheoak.fr>
+" Maintainer: sheoak <contact [at] lightn.es>
 "
 " See README.md and documentation for more informations
 "
