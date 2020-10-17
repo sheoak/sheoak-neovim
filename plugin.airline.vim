@@ -16,6 +16,13 @@ let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline_solarized_dark_text = 1
 let g:airline_solarized_dark_inactive_border = 1
 
+" coc
+" let airline#extensions#coc#error_symbol = 'E:'
+" let airline#extensions#coc#warning_symbol = 'W:'
+" let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
+" let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
+let g:airline#extensions#coc#enabled ='0'
+
 if $TERM == 'linux'
   " tty
   let g:airline_solarized_normal_green = 1

@@ -2,10 +2,13 @@
   "python.jediEnabled": false,
   "python.linting.flake8Enabled": true,
   "python.linting.enabled": true,
+  "python.analysis.diagnosticEnabled": true,
+  "python.formatting.provider": "autopep8",
   "python.venvFolders": [".virtualenvs"],
+  "diagnostic.checkCurrentLine": true,
   "diagnostic.infoSign": "",
   "diagnostic.errorSign": "×",
-  "diagnostic.warningSign": "⚠",
+  "diagnostic.warningSign": "×",
   "diagnostic-languageserver.filetypes": {
     "sh": "shellcheck"
   },
@@ -16,7 +19,6 @@
     "typescript",
     "typescriptreact"
   ],
-  "git.realtimeGutters": true,
   "suggest.noselect": true,
   "list.insertMappings": {
     "<C-x>": "action:split",
@@ -33,5 +35,6 @@
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.preferences.quoteStyle": "double",
   "typescript.referencesCodeLens.enable": false,
+  "git.realtimeGutters": true,
   "git.enableGutters": true
 }

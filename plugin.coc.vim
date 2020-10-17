@@ -1,5 +1,6 @@
 " ----------------------------------------------------------------------------
-" Goodies for Coc
+" Coc settings
+" see also after/plugin/coc.vim
 " ----------------------------------------------------------------------------
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
@@ -69,6 +70,13 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>af  <Plug>(coc-fix-current)
 
@@ -85,8 +93,8 @@ omap ac <Plug>(coc-classobj-a)
 
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of LS, ex: coc-tsserver
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
+" nmap <silent> <C-s> <Plug>(coc-range-select)
+" xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
@@ -99,11 +107,12 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Mappings using CoCList:
 " Show all diagnostics.
-nnoremap <silent> <CR>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <CR>a  :CocCommand fzf-preview.CocCurrentDiagnostics<CR>
 " Manage extensions.
 nnoremap <silent> <CR>e  :<C-u>CocList extensions<cr>
 " Show commands.
 nnoremap <silent> <CR>c  :<C-u>CocList commands<cr>
+nnoremap <silent> <CR>s  :<C-u>CocList commands<cr>python.sortImports<CR>
 " Find symbol of current document.
 nnoremap <silent> <CR>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
@@ -114,3 +123,17 @@ nnoremap <silent> <CR>n  :<C-u>CocNext<CR>
 nnoremap <silent> <CR>p  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <CR><CR>  :<C-u>CocListResume<CR>
+
+" Use K to show documentation in preview window.
+nnoremap <silent> ;k :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
