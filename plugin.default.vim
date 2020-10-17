@@ -43,7 +43,7 @@ let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
 let g:gutentags_ctags_tagfile=".ctags"
 let g:gutentags_exclude_project_root=['/etc']
 let g:gutentags_add_default_project_roots = 0
-let g:gutentags_project_root = ['.git', '.svn', '.project', 'package.json' ]
+let g:gutentags_project_root = ['.git', '.svn', '.project', 'package.json']
 let g:gutentags_file_list_command = {
       \  'markers': {
       \  '.git': 'git ls-files'
@@ -51,7 +51,12 @@ let g:gutentags_file_list_command = {
     \  }
 let g:gutentags_exclude_filetypes = ['gitcommit', 'gitconfig', 'gitrebase',
       \ 'gitsendemail', 'git']
-let g:gutentags_cache_dir = expand('~/.gutentags_cache')
+
+let s:cache_dir = expand('~/.local/share/gutentags/cache')
+if filereadable(s:cache_dir)
+  let g:gutentags_cache_dir = s:cache_dir
+endif
+
 let g:gutentags_generate_on_new = 1
 let g:gutentags_generate_on_missing = 1
 let g:gutentags_generate_on_write = 1
