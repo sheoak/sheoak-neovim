@@ -2,3 +2,4 @@
 Session.vim
 .ctags
 node_modules
+*.local.vim

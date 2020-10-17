@@ -23,6 +23,15 @@ call plug#begin(s:plug_path)
 call plug#end()
 
 execute "source " . s:vimpath . "setting.vim"
+
+try
+    execute "source " . s:vimpath . "theme.local.vim"
+catch
+    colorscheme desert
+endtry
+
+execute "source " . s:vimpath . "setting.vim"
+
 execute "source " . s:vimpath . "autocommand.vim"
 
 " default and individual plugin settings (for complex settings)

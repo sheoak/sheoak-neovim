@@ -57,18 +57,6 @@ if $TERM != 'linux'
     set termguicolors
 endif
 
-try
-    " neosolarized
-    " let g:neosolarized_bold = 1
-    " let g:neosolarized_underline = 1
-    " let g:neosolarized_italic = 1
-    " let g:neosolarized_termtrans = 1
-    " colorscheme NeoSolarized
-    colorscheme OceanicNext
-catch
-    colorscheme desert
-endtry
-
 " neovim-remote
 if has('nvim')
     let $GIT_EDITOR = 'nvr -cc split --remote-wait'
