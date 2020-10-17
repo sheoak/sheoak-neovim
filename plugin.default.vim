@@ -127,6 +127,10 @@ let g:startify_lists = [
       \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      }
 \ ]
 
+" vim-bookmarks
+let g:bookmark_save_per_working_dir = 1
+let g:bookmark_auto_save = 1
+
 " Ternjs
 " let g:deoplete#sources#ternjs#filetypes = ['jsx', 'vue']
 
