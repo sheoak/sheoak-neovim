@@ -17,7 +17,11 @@
   "git.enableGutters": true,
   "list.insertMappings": {
     "<C-x>": "action:split",
-    "<C-v>": "action:vsplit"
+    "<C-v>": "action:vsplit",
+    "<C-n>": "normal:s",
+    "<C-p>": "normal:r",
+    "<C-s>": "normal:s",
+    "<C-r>": "normal:r"
   },
   "list.normalMappings": {
     "s": "action:split",
