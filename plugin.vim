@@ -126,9 +126,6 @@ Plug 'tpope/vim-scriptease'            " For writing plugins
 " ----------------------------------------------------------------------------
 Plug 'junegunn/goyo.vim'               " Minimalist interface on demand
 Plug 'iCyMind/NeoSolarized'
-Plug 'cormacrelf/vim-colors-github'
-Plug 'mhartington/oceanic-next'
-Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'junegunn/vim-emoji'
 Plug 'vim-airline/vim-airline'         " Cool status bar
 Plug 'vim-airline/vim-airline-themes'  " Airline themes

@@ -11,7 +11,7 @@
 " See README.md and documentation for more informations
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let s:vimpath = "~/.config/nvim/"
+let g:vimpath = "~/.config/nvim/"
 if has('nvim')
     let s:plug_path=$HOME . '/.local/share/nvim/plugged'
 else
@@ -19,28 +19,23 @@ else
 endif
 
 call plug#begin(s:plug_path)
-    execute "source " . s:vimpath . "plugin.vim"
+    execute "source " . g:vimpath . "plugin.vim"
+    if filereadable(expand(g:vimpath . "plugin.local.vim"))
+        execute "source " . g:vimpath . "plugin.local.vim"
+    endif
 call plug#end()
 
-execute "source " . s:vimpath . "setting.vim"
-
-try
-    execute "source " . s:vimpath . "theme.local.vim"
-catch
-    colorscheme desert
-endtry
-
-execute "source " . s:vimpath . "setting.vim"
-
-execute "source " . s:vimpath . "autocommand.vim"
+execute "source " . g:vimpath . "setting.vim"
+execute "source " . g:vimpath . "theme.vim"
+execute "source " . g:vimpath . "autocommand.vim"
 
 " default and individual plugin settings (for complex settings)
-for path in split(glob(s:vimpath. 'plugin.*.vim'), '\n')
+for path in split(glob(g:vimpath. 'plugin.*.vim'), '\n')
     execute "source " . path
 endfor
 
 " custom mappings, including plugin mappings
-execute "source " . s:vimpath . "mapping.vim"
+execute "source " . g:vimpath . "mapping.vim"
 
 " Load private files (bookmarks, custom alias…)
 " use runtimepath so that you can have plugin/ after/… folders

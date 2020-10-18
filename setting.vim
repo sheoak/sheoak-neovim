@@ -46,17 +46,6 @@ set switchbuf=useopen,usetab,vsplit
 " leave this for git gutter
 set updatetime=100
 
-" ----------------------------------------------------------------------------
-" Theme
-" ----------------------------------------------------------------------------
-set guifont="Fira Code 12"
-set background=dark
-
-" avoid theme issues in tty
-if $TERM != 'linux'
-    set termguicolors
-endif
-
 " neovim-remote
 if has('nvim')
     let $GIT_EDITOR = 'nvr -cc split --remote-wait'
