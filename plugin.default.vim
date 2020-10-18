@@ -15,9 +15,6 @@ let g:user_emmet_install_global = 0
 " vim-rooter
 let g:rooter_patterns = ['Rakefile', '.git/', 'package.json', '.projectroot']
 
-" theme gruvbox
-" let g:gruvbox_contrast_light = 'light'
-
 " vim-template
 " Try to get email and name from git
 let g:email=system("echo -n `git config --list | grep user.email | head -n 1 | cut -d'=' -f2`")
@@ -99,7 +96,6 @@ let g:grammarous#default_comments_only_filetypes = {
 let g:grammarous#use_vim_spelllang = 1
 
 " Devicons
-" let g:webdevicons_enable_denite = 1
 let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
 
@@ -131,15 +127,6 @@ let g:startify_lists = [
 let g:bookmark_save_per_working_dir = 1
 let g:bookmark_auto_save = 1
 
-" Ternjs
-" let g:deoplete#sources#ternjs#filetypes = ['jsx', 'vue']
-
-" vim-unimpaired-extras
-" if (executable('ag'))
-"     let g:unimpaired_extra_denite_cmd_hidden = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
-"     let g:unimpaired_extra_denite_cmd = ['ag', '--follow', '--nocolor', '--nogroup', '-g', '']
-" endif
-
 " Ansible
 let g:ansible_unindent_after_newline = 1
 
@@ -154,7 +141,6 @@ let g:vcoolor_disable_mappings = 1
 " undocumented option to remove mappings
 let g:tq_map_keys = 0
 let g:tq_language=['en', 'fr']
-" let b:tq_language=['fr']
 
 " prettier
 let g:prettier#exec_cmd_async = 1
